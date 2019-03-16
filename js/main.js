@@ -1,3 +1,5 @@
+var REST_ENDPOINT_CONTACT = "https://jijojames.com/rest/index.php/v1/contact";
+
 jQuery(document).ready(function($) {
   'use strict';
 
