@@ -4,7 +4,8 @@ class ContactForm extends React.Component {
       this.state = {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        errorMessage: ''
       };
   
       this.handleInputChange = this.handleInputChange.bind(this);
@@ -12,23 +13,33 @@ class ContactForm extends React.Component {
     }
   
     handleSubmit() {
-        $.ajax({
-            method: "POST",
-            url: REST_ENDPOINT_CONTACT,
-            data: { name: this.state.name, message: this.state.message, email: this.state.email }
-        })
-        .done(function(msg) {
-        });
+        if (grecaptcha.getResponse())
+        {
+            $.ajax({
+                method: "POST",
+                url: REST_ENDPOINT_CONTACT,
+                data: { name: this.state.name, message: this.state.message, email: this.state.email }
+            })
+            .done(function(msg) {
+            });
+        }
+        else
+        {
+            this.setState({
+                ['errorMessage']: "I guess you are a robot!!!..."
+            });
+            event.preventDefault();
+        }
     }
 
     handleInputChange(event) {
-      const target = event.target;
-      const value = target.value;
-      const name = target.name;
-  
-      this.setState({
-        [name]: value
-      });
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+    
+        this.setState({
+            [name]: value
+        });
     }
   
     render() {
@@ -41,6 +52,11 @@ class ContactForm extends React.Component {
                 <div class="modal-body">
                     <div class="col-md-6 col-md-offset-3">
                         <form id="contact" action="" method="POST" onSubmit={this.handleSubmit}>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4 class="form-error">{this.state.errorMessage}</h4>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <fieldset>
@@ -59,6 +75,8 @@ class ContactForm extends React.Component {
                                         <textarea name="message" rows="6" class="form-control" id="message" value={this.state.message}
                                         onChange={this.handleInputChange} placeholder="Your message..." required></textarea>
                                     </fieldset>
+                                </div>
+                                <div class="col-md-12 reCaptcha-container" id="reCaptcha-container">
                                 </div>
                                 <div class="col-md-12">
                                     <fieldset>

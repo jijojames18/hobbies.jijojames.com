@@ -533,11 +533,19 @@ footer p {
 }
 
 .portfolio-item .hover-effect .hover-content {
-    position: absolute;
-    text-align: left;
-    width: 100%;
-    bottom: 5px;
-    left: 0;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  bottom: 5px;
+  left: 0;
+}
+
+.reCaptcha-container {
+  display: inline-block;
+}
+
+.form-error {
+  color: #ff3300;
 }
 
 @media (max-width: 530px) {
