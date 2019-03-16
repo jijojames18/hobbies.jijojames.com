@@ -4,6 +4,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
 require 'classes/sendemail.php';
+require 'classes/videos.php';
 
 $app = new \Slim\App;
 $app->post('/v1/contact', function (Request $request, Response $response, array $args) {
@@ -14,6 +15,11 @@ $app->post('/v1/contact', function (Request $request, Response $response, array 
     $sendEmail = new SendEmail(($name), escapeRequestData($email), escapeRequestData($message));
     $sendEmail->send();
     return $response;
+});
+
+$app->get('/v1/videos', function (Request $request, Response $response, array $args) {
+    $videos = new Videos();
+    return $this->response->withJson($videos->fetchAll());
 });
 
 $app->run();
