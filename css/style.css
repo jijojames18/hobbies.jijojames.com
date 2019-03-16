@@ -541,7 +541,9 @@ footer p {
 }
 
 .reCaptcha-container {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .form-error {

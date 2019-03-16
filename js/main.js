@@ -12,7 +12,6 @@ jQuery(document).ready(function($) {
     $(function() {
     var modBtn     = $('#modBtn'),
         modal      = $('#modal'),
-        close      = modal.find('.close-btn img'),
         modContent = modal.find('.modal-content');
 
     modBtn.on('click', function() {
@@ -22,6 +21,7 @@ jQuery(document).ready(function($) {
 
     $(document).on('click', function(e) {
         var target = $(e.target);
+        var close = modal.find('.close-btn img')
         if (target.is(modal) || target.is(close)) 
         {
             modContent.removeClass('modal-animated-in').addClass('modal-animated-out').delay(300).queue(function(next) {
