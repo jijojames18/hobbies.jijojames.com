@@ -8,8 +8,9 @@ $app = new \Slim\App;
 $app->post('/v1/contact', function (Request $request, Response $response, array $args) {
     $parsedBody = $request->getParsedBody();
     $name = isset($parsedBody['name']) ? $parsedBody['name'] : 'Name';
+    $email = isset($parsedBody['email']) ? $parsedBody['email'] : 'Email';
     $message = isset($parsedBody['message']) ? $parsedBody['message'] : 'Message';
-    sendEmail(escapeRequestData($name), escapeRequestData($message));
+    sendEmail(escapeRequestData($name), escapeRequestData($email), escapeRequestData($message));
     return $response;
 });
 
@@ -22,9 +23,8 @@ function escapeRequestData ($data) {
     return $data;
 }
 
-function sendEmail ($name, $body) {
+function sendEmail ($name, $fron, $body) {
     $to = "jijojames18@gmail.com";
-    $from = "contact@jijojames.com";
     $subject = "Contact Form [jijojames.com] : " . $name;
 
     $message = $body;
