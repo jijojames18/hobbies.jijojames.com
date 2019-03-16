@@ -1,4 +1,5 @@
 var REST_ENDPOINT_CONTACT = "https://jijojames.com/rest/index.php/v1/contact";
+var REST_ENDPOINT_VIDEOS = "https://jijojames.com/rest/index.php/v1/videos";
 
 function onCaptchaCallback () {
     grecaptcha.render('reCaptcha-container', {
