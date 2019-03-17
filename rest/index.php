@@ -5,6 +5,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 require 'vendor/autoload.php';
 require 'classes/sendemail.php';
 require 'classes/videos.php';
+require 'classes/blog.php';
 
 $app = new \Slim\App;
 $app->post('/v1/contact', function (Request $request, Response $response, array $args) {
@@ -20,6 +21,12 @@ $app->post('/v1/contact', function (Request $request, Response $response, array 
 $app->get('/v1/videos', function (Request $request, Response $response, array $args) {
     $videos = new Videos();
     return $this->response->withJson($videos->fetchAll());
+});
+
+$app->get('/v1/blog', function (Request $request, Response $response, array $args) {
+    $blog = new Blog();
+    //file_get_contents('test.log', print_r($blog->fetchAll()));
+    return $this->response->withJson($blog->fetchAll());
 });
 
 $app->run();
