@@ -1,6 +1,7 @@
 var REST_ENDPOINT_CONTACT = "https://jijojames.com/rest/index.php/v1/contact";
 var REST_ENDPOINT_VIDEOS = "https://jijojames.com/rest/index.php/v1/videos";
 var REST_ENDPOINT_BLOG = 'https://jijojames.com/rest/index.php/v1/blog';
+var REST_ENDPOINT_GALLERY = 'https://jijojames.com/rest/index.php/v1/gallery';
 
 function onCaptchaCallback() {
     grecaptcha.render('reCaptcha-container', {
