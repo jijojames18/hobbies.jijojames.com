@@ -1,11 +1,11 @@
 class Videos extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {
-          'videos': []
-      };
+        super(props);
+        this.state = {
+            'videos': []
+        };
     }
-   
+
     componentWillMount() {
         var that = this;
         fetch(REST_ENDPOINT_VIDEOS).then(function (response) {

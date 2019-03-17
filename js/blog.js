@@ -34,7 +34,7 @@ class Blog extends React.Component {
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <img src={post.image} height = "460px" width="360px" alt="" />
+                            <img src={post.image} height="460px" width="360px" alt="" />
                         </div>
                     </div>
                 </div>

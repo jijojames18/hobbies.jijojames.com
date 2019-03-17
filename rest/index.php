@@ -25,7 +25,6 @@ $app->get('/v1/videos', function (Request $request, Response $response, array $a
 
 $app->get('/v1/blog', function (Request $request, Response $response, array $args) {
     $blog = new Blog();
-    //file_get_contents('test.log', print_r($blog->fetchAll()));
     return $this->response->withJson($blog->fetchAll());
 });
 
