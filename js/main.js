@@ -1,5 +1,5 @@
-var REST_ENDPOINT_CONTACT = "rest/contact";
-var REST_ENDPOINT_VIDEOS = "rest/videos";
+var REST_ENDPOINT_CONTACT = "rest/v1/contact";
+var REST_ENDPOINT_VIDEOS = "rest/v1/videos";
 var REST_ENDPOINT_BLOG = 'rest/v1/blog';
 var REST_ENDPOINT_GALLERY = 'rest/v1/gallery';
 
@@ -11,6 +11,12 @@ function onCaptchaCallback() {
 
 jQuery(document).ready(function ($) {
     'use strict';
+
+    jQuery.ajax({
+        url: "https://www.google.com/recaptcha/api.js?onload=onCaptchaCallback&render=explicit",
+        dataType: 'script',
+        async: true
+    });
 
     $(function () {
         var modBtn = $('#modBtn'),
