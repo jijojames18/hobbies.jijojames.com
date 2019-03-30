@@ -2,6 +2,7 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
+require 'bootstrap.php';
 require 'vendor/autoload.php';
 require 'classes/sendemail.php';
 require 'classes/videos.php';

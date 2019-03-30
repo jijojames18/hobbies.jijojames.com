@@ -7,7 +7,7 @@ class Gallery {
     }
 
     private function createDatabaseConnection() {
-        $this->db = new PDO("mysql:host=localhost;dbname=test", 'root', '1');
+        $this->db = new PDO("mysql:host=" . DB_HOST .";dbname=". DB_NAME, DB_USER, DB_PASSWORD);
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
