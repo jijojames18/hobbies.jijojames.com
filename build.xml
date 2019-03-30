@@ -7,7 +7,7 @@
     <target name="clean">
         <delete dir="dist" />
     </target>
-    <target name="build">
+    <target name="build" depends="clean">
         <mkdir dir="dist/rest" />
         <mkdir dir="dist/css" />
         <copy todir="dist/rest">
@@ -66,102 +66,48 @@
         </exec>
 
         <!--Replace js src from html files-->
-        <replaceregexp file="dist/index.html" 
-            match=".*script src.*"
+        <replaceregexp match=".*script src.*"
             replace="" 
             byline="true"
-        />
-        <replaceregexp file="dist/blog.html" 
-            match=".*script src.*"
-            replace="" 
-            byline="true"
-        />
-        <replaceregexp file="dist/videos.html" 
-            match=".*script src.*"
-            replace="" 
-            byline="true"
-        />
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
 
         <!--Add minified js files-->
-        <replaceregexp file="dist/index.html" 
-            match=".*Minified js start.*"
+        <replaceregexp match=".*Minified js start.*"
             replace="" 
             byline="true"
-        />
-        <replaceregexp file="dist/blog.html" 
-            match=".*Minified js start.*"
-            replace=""
-            byline="true"
-        />
-        <replaceregexp file="dist/videos.html" 
-            match=".*Minified js start.*"
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
+        <replaceregexp match=".*Minified js end.*"
             replace="" 
             byline="true"
-        />
-        <replaceregexp file="dist/index.html" 
-            match=".*Minified js end.*"
-            replace="" 
-            byline="true"
-        />
-        <replaceregexp file="dist/blog.html" 
-            match=".*Minified js end.*"
-            replace=""
-            byline="true"
-        />
-        <replaceregexp file="dist/videos.html" 
-            match=".*Minified js end.*"
-            replace="" 
-            byline="true"
-        />
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
 
         <!--Replace link rel from html files-->
-        <replaceregexp file="dist/index.html" 
-            match=".*link rel.*"
+        <replaceregexp match=".*link rel.*"
             replace="" 
             byline="true"
-        />
-        <replaceregexp file="dist/blog.html" 
-            match=".*link rel.*"
-            replace="" 
-            byline="true"
-        />
-        <replaceregexp file="dist/videos.html" 
-            match=".*link rel.*"
-            replace="" 
-            byline="true"
-        />
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
 
         <!--Add minified css files-->
-        <replaceregexp file="dist/index.html" 
-            match=".*Minified css start.*"
+        <replaceregexp match=".*Minified css start.*"
             replace="" 
             byline="true"
-        />
-        <replaceregexp file="dist/blog.html" 
-            match=".*Minified css start.*"
-            replace=""
-            byline="true"
-        />
-        <replaceregexp file="dist/videos.html" 
-            match=".*Minified css start.*"
-            replace=""
-            byline="true"
-        />
-        <replaceregexp file="dist/index.html" 
-            match=".*Minified css end.*"
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
+        <replaceregexp match=".*Minified css end.*"
             replace="" 
             byline="true"
-        />
-        <replaceregexp file="dist/blog.html" 
-            match=".*Minified css end.*"
-            replace=""
-            byline="true"
-        />
-        <replaceregexp file="dist/videos.html" 
-            match=".*Minified css end.*"
-            replace=""
-            byline="true"
-        />
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
 
         <zip destfile="dist/build.zip" basedir="dist"/>
     </target>
