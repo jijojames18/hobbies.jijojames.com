@@ -5,34 +5,110 @@
         <echo>clean  : Delete build folder </echo>
     </target>
     <target name="clean">
-        <delete dir="php-build" />
+        <delete dir="dist" />
     </target>
     <target name="build" depends="clean">
-        <mkdir dir="php-build/rest" />
-        <copy todir="php-build/rest">
+        <mkdir dir="dist/rest" />
+        <mkdir dir="dist/css" />
+        <copy todir="dist/rest">
             <fileset dir="rest"/>
         </copy>
-        <replaceregexp file="php-build/rest/bootstrap.php" 
+        <!--Add environment variables-->
+        <replaceregexp file="dist/rest/bootstrap.php" 
             match=".*DB_HOST.*"
             replace="define('DB_HOST', '${dbHost}');" 
             byline="true"
         />
-        <replaceregexp file="php-build/rest/bootstrap.php" 
+        <replaceregexp file="dist/rest/bootstrap.php" 
             match=".*DB_NAME.*"
             replace="define('DB_NAME', '${dbName}');" 
             byline="true"
         />
-        <replaceregexp file="php-build/rest/bootstrap.php" 
+        <replaceregexp file="dist/rest/bootstrap.php" 
             match=".*DB_USER.*"
             replace="define('DB_USER', '${dbUser}');" 
             byline="true"
         />
-        <replaceregexp file="php-build/rest/bootstrap.php" 
+        <replaceregexp file="dist/rest/bootstrap.php" 
             match=".*DB_PASSWORD.*"
             replace="define('DB_PASSWORD', '${dbPassword}');" 
             byline="true"
         />
-        <zip destfile="php-build/build.zip" basedir="php-build/rest"/>
-        <delete dir="php-build/rest" />
+
+        <!--Combine all css files to a single file-->
+        <concat destfile="dist/css/styles.css">
+            <fileset dir="css" includes="*.css" />
+        </concat>
+        <copy todir="dist/css/fonts">
+            <fileset dir="css/fonts"/>
+        </copy>
+
+        <!--Move images to dist-->
+        <copy todir="dist/img">
+            <fileset dir="img"/>
+        </copy>
+
+        <!--Combine vendor files into a single file-->
+        <concat destfile="dist/js/vendor.js">
+            <filelist dir="js/vendor" files="react.js,react-dom.js,jquery-1.11.2.min.js,bootstrap.min.js,light-box.js"/>
+        </concat>
+        <copy file="js/main.js" tofile="dist/js/main.js"/>
+
+        <!--Copy all html files-->
+        <copy file="index.html" tofile="dist/index.html"/>
+        <copy file="blog.html" tofile="dist/blog.html"/>
+        <copy file="videos.html" tofile="dist/videos.html"/>
+        <copy file="htaccess" tofile="dist/htaccess"/>
+
+        <!--Transpile js (Works only in windows)-->
+        <exec executable="cmd">
+            <arg line="/c npm run transpile"/>
+        </exec>
+
+        <!--Replace js src from html files-->
+        <replaceregexp match=".*script src.*"
+            replace="" 
+            byline="true"
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
+
+        <!--Add minified js files-->
+        <replaceregexp match=".*Minified js start.*"
+            replace="" 
+            byline="true"
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
+        <replaceregexp match=".*Minified js end.*"
+            replace="" 
+            byline="true"
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
+
+        <!--Replace link rel from html files-->
+        <replaceregexp match=".*link rel.*"
+            replace="" 
+            byline="true"
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
+
+        <!--Add minified css files-->
+        <replaceregexp match=".*Minified css start.*"
+            replace="" 
+            byline="true"
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
+        <replaceregexp match=".*Minified css end.*"
+            replace="" 
+            byline="true"
+        >
+            <fileset dir="dist" includes="*.html"/>
+        </replaceregexp>
+
+        <zip destfile="dist/build.zip" basedir="dist"/>
     </target>
 </project>
