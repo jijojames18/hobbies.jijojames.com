@@ -1,0 +1,38 @@
+<project name="jijojames.com" basedir="."  default="help">
+    <target name="help">
+        <echo>build   : Builds packages (use -DdbHost=localhost, -DdbName=DB_NAME, -DdbUser=DB_USER and -DdbPass=DB_PASSWORD) </echo>
+        <echo>help    : Prints this help </echo>
+        <echo>clean  : Delete build folder </echo>
+    </target>
+    <target name="clean">
+        <delete dir="php-build" />
+    </target>
+    <target name="build" depends="clean">
+        <mkdir dir="php-build/rest" />
+        <copy todir="php-build/rest">
+            <fileset dir="rest"/>
+        </copy>
+        <replaceregexp file="php-build/rest/bootstrap.php" 
+            match=".*DB_HOST.*"
+            replace="define('DB_HOST', '${dbHost}');" 
+            byline="true"
+        />
+        <replaceregexp file="php-build/rest/bootstrap.php" 
+            match=".*DB_NAME.*"
+            replace="define('DB_NAME', '${dbName}');" 
+            byline="true"
+        />
+        <replaceregexp file="php-build/rest/bootstrap.php" 
+            match=".*DB_USER.*"
+            replace="define('DB_USER', '${dbUser}');" 
+            byline="true"
+        />
+        <replaceregexp file="php-build/rest/bootstrap.php" 
+            match=".*DB_PASSWORD.*"
+            replace="define('DB_PASSWORD', '${dbPassword}');" 
+            byline="true"
+        />
+        <zip destfile="php-build/build.zip" basedir="php-build/rest"/>
+        <delete dir="php-build/rest" />
+    </target>
+</project>
