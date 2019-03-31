@@ -74,18 +74,21 @@
         </replaceregexp>
 
         <!--Add minified js files-->
-        <replaceregexp match=".*Minified js start.*"
-            replace="" 
+        <replaceregexp file="dist/index.html" 
+            match=".*Minified js here.*"
+            replace="&#9;&#9;\&lt;script src='js/vendor.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/main.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/contact.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/gallery.js'\&gt;\&lt;/script\&gt;"
             byline="true"
-        >
-            <fileset dir="dist" includes="*.html"/>
-        </replaceregexp>
-        <replaceregexp match=".*Minified js end.*"
-            replace="" 
+        />
+        <replaceregexp file="dist/blog.html" 
+            match=".*Minified js here.*"
+            replace="&#9;&#9;\&lt;script src='js/vendor.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/main.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/contact.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/blog.js'\&gt;\&lt;/script\&gt;"
             byline="true"
-        >
-            <fileset dir="dist" includes="*.html"/>
-        </replaceregexp>
+        />
+        <replaceregexp file="dist/videos.html" 
+            match=".*Minified js here.*"
+            replace="&#9;&#9;\&lt;script src='js/vendor.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/main.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/contact.js'\&gt;\&lt;/script\&gt;&#10;&#9;&#9;\&lt;script src='js/videos.js'\&gt;\&lt;/script\&gt;"
+            byline="true"
+        />
 
         <!--Replace link rel from html files-->
         <replaceregexp match=".*link rel.*"
@@ -96,14 +99,8 @@
         </replaceregexp>
 
         <!--Add minified css files-->
-        <replaceregexp match=".*Minified css start.*"
-            replace="" 
-            byline="true"
-        >
-            <fileset dir="dist" includes="*.html"/>
-        </replaceregexp>
-        <replaceregexp match=".*Minified css end.*"
-            replace="" 
+        <replaceregexp match=".*Minified css here.*"
+            replace="&#9;&#9;\&lt;link href='css/styles.css' rel='stylesheet'\&gt;" 
             byline="true"
         >
             <fileset dir="dist" includes="*.html"/>
