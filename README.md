@@ -13,49 +13,81 @@ This project uses React for building the user interface. In total, there are 3 p
 
 In addition, there is a REST endpoint `/v1/contact` which receives the details provided by user in the contact form and sends an email.
 
+### Database
+There are 3 tables used in the project. The rest endpoints query the tables using PDO.
+
+1. gallery
+
+  | Name     |    Type      |                            |
+  | -------- | ------------ | -------------------------- |
+  | slno     | INT(10)      | PRIMARY KEY AUTO INCREMENT |
+  | file_url | TEXT         |                            |
+  | place    | TEXT         |                            |
+  | date     | VARCHAR(255) |                            |
+
+
+2. blog
+
+  | Name        |    Type      |                            |
+  | ----------- | ------------ | -------------------------- |
+  | slno        | INT(10)      | PRIMARY KEY AUTO INCREMENT |
+  | title       | VARCHAR(255) |                            |
+  | date        | VARCHAR(255) |                            |
+  | short_desc  | TEXT         |                            |
+  | image       | TEXT         |                            |
+  | blogger_url | TEXT         |                            |
+
+
+3. videos
+
+  | Name        |    Type      |                            |
+  | ----------- | ------------ | -------------------------- |
+  | slno        | INT(10)      | PRIMARY KEY AUTO INCREMENT |
+  | youtube_url | VARCHAR(255) |                            |
+
 Full REST endpoint specification is given below.
 
-GET	rest/v1/gallery	
+### GET	rest/v1/gallery	
 {}	
 
 [
-    {
-        date: STRING
-        file_url: STRING
-        place: STRING
-        slno: NUMBER
+    {  
+        date: STRING,  
+        file_url: STRING,  
+        place: STRING,  
+        slno: NUMBER  
     }
 ]
 
-GET	rest/v1/blog	
+### GET	rest/v1/blog	
 {}	
 
 [
-    {
-        blogger_url: STRING
-        date: STRING
-        image: STRING
-        short_desc: STRING
-        title: STRING
-        slno: NUMBER
+    {  
+        blogger_url: STRING,  
+        date: STRING,  
+        image: STRING,  
+        short_desc: STRING,  
+        title: STRING,  
+        slno: NUMBER  
     }
 ]
 
-GET	rest/v1/videos	
+### GET	rest/v1/videos	
 {}	
 
 [
-    {
-        youtube_url: STRING
-        slno: NUMBER
+    {  
+        youtube_url: STRING,  
+        slno: NUMBER  
     }
 ]
 
-GET	rest/v1/contact	
-{
-    name: STRING
-    email: STRING
-    message: STRING
+### GET	rest/v1/contact  
+{  
+    name: STRING,  
+    email: STRING,  
+    message: STRING,  
 }	
 
 {}
@@ -67,26 +99,6 @@ The website uses the following libraries for rendering the user interface.
 3. Lightbox (http://lokeshdhakar.com/projects/lightbox2/)
 4. Modernizr 2.8.3
 
-### Database
-There are 3 tables used in the project. The rest endpoints query the tables using PDO.
-
-1. gallery
-  slno INT(10) PRIMARY KEY AUTO INCREMENT
-  file_url TEXT
-  place TEXT
-  date VARCHAR(255)
-
-2. blog
-  slno INT(10) PRIMARY KEY AUTO INCREMENT
-  title VARCHAR(255)
-  date VARCHAR(255)
-  short_desc TEXT
-  image TEXT
-  blogger_url TEXT
-
-3. videos
-  slno INT(10) PRIMARY KEY AUTO INCREMENT
-  youtube_url VARCHAR(255)
 
 ## Build Scripts
 
