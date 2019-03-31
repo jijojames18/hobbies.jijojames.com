@@ -48,49 +48,51 @@ There are 3 tables used in the project. The rest endpoints query the tables usin
 Full REST endpoint specification is given below.
 
 ### GET	rest/v1/gallery	
-{}	
+Request: {}	
 
-[
-    {  
-        date: STRING,  
-        file_url: STRING,  
-        place: STRING,  
-        slno: NUMBER  
-    }
-]
+Response: Array of objects of format
+
+| Name     |    Type      |
+| -------- | ------------ |
+| slno     | NUMBER       |
+| file_url | STRING       |
+| place    | STRING       |
+| date     | STRING       |
 
 ### GET	rest/v1/blog	
-{}	
+Request: {}		
 
-[
-    {  
-        blogger_url: STRING,  
-        date: STRING,  
-        image: STRING,  
-        short_desc: STRING,  
-        title: STRING,  
-        slno: NUMBER  
-    }
-]
+Response: Array of objects of format
+
+| Name        |    Type      |
+| ----------- | ------------ |
+| slno        | NUMBER       |
+| title       | STRING       |
+| date        | STRING       |
+| short_desc  | STRING       |
+| image       | STRING       |
+| blogger_url | STRING       |
 
 ### GET	rest/v1/videos	
-{}	
+Request: {}		
 
-[
-    {  
-        youtube_url: STRING,  
-        slno: NUMBER  
-    }
-]
+Response: Array of objects of format
+
+| Name        |    Type      |
+| ----------- | ------------ |
+| slno        | NUMBER       |
+| youtube_url | STRING       |
 
 ### GET	rest/v1/contact  
-{  
-    name: STRING,  
-    email: STRING,  
-    message: STRING,  
-}	
+Request: Object of format
 
-{}
+| Name     |    Type      |
+| -------- | ------------ |
+| name     | STRING       |
+| email    | STRING       |
+| message  | STRING       |
+
+Response: {}
 
 
 The website uses the following libraries for rendering the user interface.
