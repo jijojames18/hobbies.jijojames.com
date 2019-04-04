@@ -13,6 +13,9 @@ This project uses React for building the user interface. In total, there are 3 p
 
 In addition, there is a REST endpoint `/v1/contact` which receives the details provided by user in the contact form and sends an email.
 
+### CSS
+Styles are saved as scss files. Common styles are stored inside styles.scss and page specific styles are stored in corresponding partial files(_gallery.scss, _blog.scss, _videos.scss). The html files have reference to only style.css file and hence the changes made to scss file needs to be converted to css and stored inside style.css file. This can be done by running `sass css/styles.scss css/style.css` everytime a change is done or by watching for changes and re-compiling css automatically using `sass --watch css/styles.scss css/style.css`.
+
 ### Database
 There are 3 tables used in the project. The rest endpoints query the tables using PDO.
 
