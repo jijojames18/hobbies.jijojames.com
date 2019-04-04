@@ -1,7 +1,7 @@
-var REST_ENDPOINT_CONTACT = "rest/index.php/v1/contact";
-var REST_ENDPOINT_VIDEOS = "rest/index.php/v1/videos";
-var REST_ENDPOINT_BLOG = 'rest/index.php/v1/blog';
-var REST_ENDPOINT_GALLERY = 'rest/index.php/v1/gallery';
+var REST_ENDPOINT_CONTACT = "rest/v1/contact";
+var REST_ENDPOINT_VIDEOS = "rest/v1/videos";
+var REST_ENDPOINT_BLOG = 'rest/v1/blog';
+var REST_ENDPOINT_GALLERY = 'rest/v1/gallery';
 
 function onCaptchaCallback() {
     grecaptcha.render('reCaptcha-container', {
