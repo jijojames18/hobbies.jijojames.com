@@ -1,0 +1,92 @@
+.blog-entries {
+  padding: 80px 0px;
+  background-color: #232323;
+
+  .blog-posts {
+    margin-right: 30px;
+  }
+}
+
+.blog-post {
+  border-bottom: 1px solid #414141;
+  padding-bottom: 65px;
+  margin-bottom: 60px;
+
+  img {
+    width: 100%;
+    overflow-y: hidden;
+  }
+
+  .text-content {
+    margin-top: 30px;
+    text-align: justify;
+
+    h2 {
+      margin-top: 5px;
+      font-size: 36px;
+      color: $default-color;
+      letter-spacing: $default-letter-spacing;
+      text-transform: capitalize;
+      font-weight: 300;
+    }
+
+    .simple-btn {
+      margin: 25px 0;
+
+      a {
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 600;
+        background-color: transparent;
+        color: $default-color;
+        letter-spacing: 2px;
+        border-bottom: 3px solid $default-color;
+        padding-bottom: 3px;
+        text-decoration: none;
+        transition: all 0.5s;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    p {
+      color: #bbb;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 28px;
+      margin-top: 20px;
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 200;
+      color: $default-color;
+      letter-spacing: $default-letter-spacing;
+
+      a {
+        color: #f4dd5b;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.blog-posts {
+  .load-more-button {
+    @extend %load-more-button;
+  }
+}
+
+.blog-posts .load-more-button a {
+  width: 100%;
+}
+
+@include media("(max-width: 992px)") {
+  .blog-entries {
+    .blog-posts {
+      margin-right: 0px;
+    }
+  }
+}
