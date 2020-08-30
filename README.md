@@ -1,122 +1,68 @@
-## Code base for website jijojames.com. 
-This project uses React for building the user interface. In total, there are 3 pages in the website. Each one of them receives the required data by calling PHP REST API's constructed using Slim Framework. Technical details of each page is shown below.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-1. Index
-  The index page also known as gallery page calls REST API `/v1/gallery` to fetch details of all images from gallery table. The URL of the 
-  image along with metadata is returned in the call which is then rendered using img tag.
-2. Blog
-  The blog page calls REST API `/v1/blog` to fetch details of all blog posts from blog table. The URL of the blog post in blogger along with
-  a short description of the post is returned in the call.
-3. Videos
-  The videos page calls REST API `/v1/videos` to fetch details of all videos from video table. The iframe of the video is returned in
-  the call.
+## Available Scripts
 
-In addition, there is a REST endpoint `/v1/contact` which receives the details provided by user in the contact form and sends an email.
+In the project directory, you can run:
 
-### CSS
-Styles are saved as scss files. Common styles are stored inside styles.scss and page specific styles are stored in corresponding partial files(_gallery.scss, _blog.scss, _videos.scss). The html files have reference to only style.css file and hence the changes made to scss file needs to be converted to css and stored inside style.css file. This can be done by running `sass css/styles.scss css/style.css` everytime a change is done or by watching for changes and re-compiling css automatically using `sass --watch css/styles.scss css/style.css`.
+### `npm start`
 
-### Database
-There are 3 tables used in the project. The rest endpoints query the tables using PDO.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-1. gallery
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-  | Name     |    Type      |                            |
-  | -------- | ------------ | -------------------------- |
-  | slno     | INT(10)      | PRIMARY KEY AUTO INCREMENT |
-  | file_url | TEXT         |                            |
-  | place    | TEXT         |                            |
-  | date     | VARCHAR(255) |                            |
+### `npm test`
 
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-2. blog
+### `npm run build`
 
-  | Name        |    Type      |                            |
-  | ----------- | ------------ | -------------------------- |
-  | slno        | INT(10)      | PRIMARY KEY AUTO INCREMENT |
-  | title       | VARCHAR(255) |                            |
-  | date        | VARCHAR(255) |                            |
-  | short_desc  | TEXT         |                            |
-  | image       | TEXT         |                            |
-  | blogger_url | TEXT         |                            |
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-3. videos
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-  | Name        |    Type      |                            |
-  | ----------- | ------------ | -------------------------- |
-  | slno        | INT(10)      | PRIMARY KEY AUTO INCREMENT |
-  | youtube_url | VARCHAR(255) |                            |
+### `npm run eject`
 
-Full REST endpoint specification is given below.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### GET	rest/v1/gallery	
-Request: {}	
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Response: Array of objects of format
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-| Name     |    Type      |
-| -------- | ------------ |
-| slno     | NUMBER       |
-| file_url | STRING       |
-| place    | STRING       |
-| date     | STRING       |
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### GET	rest/v1/blog	
-Request: {}		
+## Learn More
 
-Response: Array of objects of format
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-| Name        |    Type      |
-| ----------- | ------------ |
-| slno        | NUMBER       |
-| title       | STRING       |
-| date        | STRING       |
-| short_desc  | STRING       |
-| image       | STRING       |
-| blogger_url | STRING       |
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### GET	rest/v1/videos	
-Request: {}		
+### Code Splitting
 
-Response: Array of objects of format
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-| Name        |    Type      |
-| ----------- | ------------ |
-| slno        | NUMBER       |
-| youtube_url | STRING       |
+### Analyzing the Bundle Size
 
-### GET	rest/v1/contact  
-Request: Object of format
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-| Name     |    Type      |
-| -------- | ------------ |
-| name     | STRING       |
-| email    | STRING       |
-| message  | STRING       |
+### Making a Progressive Web App
 
-Response: {}
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
+### Advanced Configuration
 
-The website uses the following libraries for rendering the user interface.
-1. Jquery v1.11.2
-2. Twitter Bootstrap v3.3.1
-3. Lightbox (http://lokeshdhakar.com/projects/lightbox2/)
-4. Modernizr 2.8.3
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
+### Deployment
 
-## Build Scripts
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-The project uses ant and npm to build the required files in the `dist` folder of the repository. 
+### `npm run build` fails to minify
 
-### `npm run transplie`
-
-Generates the transpiled js files(gallery.js, video.js, blog.js) in the dist folder. Note : For development purposes, the ES6 files are transpiled on load by the browser. This is done by adding `text/babel` to the script references.
-
-
-### `ant clean`
-
-Removes the `dist` folder
-
-### `ant build -DdbHost=<DBHOST> -DdbUser=<DBUSER> -DdbPassword=<DBPASSWORD> -DdbName=<DBNAME>`
-Replaces the constants in `bootstrap.php` with the command line arguments. Combines all css files into a single style.css file. Moves all static image resources into the `img` folder. Combine all library files into a single file `vendor.js`. Transpile the ES6 files. Replaces all script and link tags in html files with the bundled file references.
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
