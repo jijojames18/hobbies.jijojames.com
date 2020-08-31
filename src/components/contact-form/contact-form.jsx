@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -11,7 +12,9 @@ import CustomButton from "../custom-button/custom-button";
 
 import { ModalBody } from "./contact-form.styles";
 
-const ContactForm = () => {
+import { contactFormSubmitStart } from "../../redux/contact-form/contact-form.actions";
+
+const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
   const captchaAlertMessage =
     "Please prove you are a human. Check the captcha button";
 
@@ -28,6 +31,22 @@ const ContactForm = () => {
   });
 
   const { name, email, comments } = userDetails;
+
+  useEffect(() => {
+    if (formAlert.alertType !== null) {
+      setUserDetails({
+        name: "",
+        email: "",
+        comments: "",
+      });
+
+      setAlert({
+        visible: true,
+        message: formAlert.alertMessage,
+        variant: formAlert.alertType,
+      });
+    }
+  }, [formAlert]);
 
   const onCaptchaCheck = (props) => {
     setAlert({ ...alert, visible: false });
@@ -48,6 +67,11 @@ const ContactForm = () => {
         variant: "warning",
       });
     } else {
+      contactFormSubmitStart({
+        formData: { ...userDetails },
+        captcha,
+        site: "stpeterstvm.org",
+      });
     }
     event.preventDefault();
     event.stopPropagation();
@@ -138,4 +162,15 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+const mapStateToProps = (state) => {
+  return {
+    formAlert: state.contactForm,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  contactFormSubmitStart: (formDetails) =>
+    dispatch(contactFormSubmitStart(formDetails)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
