@@ -17,6 +17,7 @@ export const PopupIconButton = styled.button`
   background-color: transparent;
   outline: none;
   border: none;
+  cursor: pointer;
 `;
 
 export const ContactImage = styled.div`
