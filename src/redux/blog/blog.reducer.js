@@ -18,7 +18,7 @@ const blogReducer = (state = INITIAL_STATE, action) => {
         ...state,
         error: action.payload,
       };
-    case BlogTypes.VIDEO_FETCH_START:
+    case BlogTypes.BLOG_FETCH_START:
     default:
       return state;
   }
