@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import contactImage from "../../assets/contact-icon.png";
 
+export const ContactIconContainer = styled.div``;
+
 export const PopupIcon = styled.div`
   position: fixed;
   bottom: 30px;
