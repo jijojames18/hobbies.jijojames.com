@@ -1,27 +1,25 @@
 import React, { useState } from "react";
-import { ModalBody } from "./contact-form.styles";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import ReCAPTCHA from "react-google-recaptcha";
+import Alert from "react-bootstrap/Alert";
 
 import FormInput from "../form-input/form-input";
 import FormTextArea from "../form-input/form-textarea";
 import CustomButton from "../custom-button/custom-button";
 
+import { ModalBody } from "./contact-form.styles";
+
 const ContactForm = () => {
   const captchaAlertMessage =
     "Please prove you are a human. Check the captcha button";
-  const successfulAlertMessage =
-    "Your message has been sent. We will get back to you as soon as possible.";
-  const errorInSendingAlertMessage =
-    "An internal error occurred. We are looking into this. In the mean time, please contact stpeterstvm.org directly.";
 
   const [captcha, setCaptcha] = useState("");
   const [alert, setAlert] = useState({
     visible: false,
     type: "warning",
-    message: "",
+    message: captchaAlertMessage,
   });
   const [userDetails, setUserDetails] = useState({
     name: "",
@@ -41,17 +39,40 @@ const ContactForm = () => {
     setUserDetails({ ...userDetails, [name]: value });
   };
 
-  const onSubmit = (event) => {};
+  const onSubmit = (event) => {
+    if (!captcha) {
+      setAlert({
+        ...alert,
+        visible: true,
+        message: captchaAlertMessage,
+        variant: "warning",
+      });
+    } else {
+    }
+    event.preventDefault();
+    event.stopPropagation();
+  };
 
   return (
     <ModalBody className="contact-form">
       <Col md={{ span: 6, offset: 3 }}>
         <Form onSubmit={onSubmit}>
-          <Row>
-            <Col md={12}>
-              <h4 class="form-error">{alert.message}</h4>
-            </Col>
-          </Row>
+          {alert.visible ? (
+            <Row>
+              <Col md={12}>
+                <Alert
+                  variant={alert.variant}
+                  show={alert.visible}
+                  dismissible={alert.variant === "info"}
+                  onClose={() => setAlert({ ...alert, visible: false })}
+                >
+                  {alert.message}
+                </Alert>
+              </Col>
+            </Row>
+          ) : (
+            ""
+          )}
           <Row>
             <Col md={12}>
               <Form.Group controlId="formGroupName">
