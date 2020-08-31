@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 
 const inputStyles = css`
   border-radius: 5px;
+  color: #fff;
+  padding-left: 15px;
   font-size: 14px;
   font-weight: 200;
   color: #fff;
@@ -9,10 +11,9 @@ const inputStyles = css`
   outline: none;
   border: none;
   box-shadow: none;
-  line-height: 40px;
-  height: 40px;
+  line-height: 50px;
+  height: 50px;
   width: 60%;
-  margin-bottom: 25px;
 
   &:focus {
     outline: none;
@@ -21,11 +22,15 @@ const inputStyles = css`
   &:focus ~ label {
     top: -25px;
   }
+
+  &::placeholder {
+    color: #fff;
+  }
 `;
 
 export const GroupContainer = styled.div`
   position: relative;
-  margin: 45px 0;
+  margin: 14px 0;
 `;
 
 export const FormInputContainer = styled.input`
@@ -48,7 +53,7 @@ export const FormInputLabel = styled.label`
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 170px;
+  left: 8px;
   top: 10px;
   transition: 300ms ease all;
   &.shrink {

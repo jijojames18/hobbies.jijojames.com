@@ -8,6 +8,7 @@ import Footer from "./components/footer/footer";
 import ContactIcon from "./components/contact-icon/contact-icon";
 
 import { GlobalStyle } from "./global.styles";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

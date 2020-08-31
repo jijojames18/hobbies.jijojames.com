@@ -10,4 +10,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.recaptcha-container {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0;
+}
 `;

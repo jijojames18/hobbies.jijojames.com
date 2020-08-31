@@ -39,6 +39,7 @@ export const MainMenu = styled.div`
   opacity: 0;
   transition: all 0.3s;
   transition-delay: 0s;
+  width: 100%;
 
   &:nth-child(2) {
     transition-delay: 0s;
