@@ -16,8 +16,11 @@ body {
   margin: 18px 0;
 }
 .gallery-container {
-  .container-fluid, .col-md-4, .col-sm-6 {
-    padding: 0px
+  .row {
+    margin: 0px;
+    .container-fluid, .col-md-4, .col-sm-6 {
+      padding: 0px
+    }
   }
 }
 `;

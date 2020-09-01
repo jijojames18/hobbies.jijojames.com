@@ -1,5 +1,4 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {
   GalleryItemContainer,
@@ -17,7 +16,7 @@ const GalleryItem = ({ gallery: { place, date, url } }) => {
   return (
     <Col md={4} sm={6}>
       <GalleryItemContainer>
-        <GalleryItemLink href={url} data-lightbox="image-1">
+        <GalleryItemLink href={url} data-lightbox="my-gallery">
           <GalleryItemThumb>
             <GalleryItemHoverEffect>
               <GalleryItemHoverContent>
