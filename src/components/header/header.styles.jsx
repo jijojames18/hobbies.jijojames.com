@@ -25,6 +25,11 @@ export const LogoLink = styled.a`
   color: #fff;
   text-decoration: none;
   letter-spacing: 0.5px;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 `;
 
 export const MenuIcon = styled.div`

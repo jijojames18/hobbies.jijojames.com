@@ -13,7 +13,6 @@ import {
 } from "./blog-item.styles";
 
 const BlogItem = ({ blog: { date, title, desc, url, image } }) => {
-  console.log(date);
   return (
     <BlogPost>
       <Row>

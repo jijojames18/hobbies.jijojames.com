@@ -34,15 +34,9 @@ const BlogPage = ({ blogFetchStart, blog, total }) => {
   return (
     <BlogContainer>
       <Container>
-        <Row>
-          <BlogPosts>
-            <Row>
-              {blog.map((blogItem) => {
-                return <BlogItem key={blogItem.id} blog={blogItem} />;
-              })}
-            </Row>
-          </BlogPosts>
-        </Row>
+        {blog.map((blogItem) => {
+          return <BlogItem key={blogItem.id} blog={blogItem} />;
+        })}
       </Container>
       &nbsp; &nbsp;
       <Container>
