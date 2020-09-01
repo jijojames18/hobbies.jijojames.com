@@ -15,6 +15,7 @@ export function* blogFetchStart(payload) {
     );
     yield put(blogFetchSuccess(data));
   } catch (error) {
+    console.log(error);
     yield put(
       blogFetchFailure("An internal error occurred. We are looking into this.")
     );

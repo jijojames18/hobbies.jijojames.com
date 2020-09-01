@@ -15,6 +15,7 @@ export function* galleryFetchStart(payload) {
     );
     yield put(galleryFetchSuccess(data));
   } catch (error) {
+    console.log(error);
     yield put(
       galleryFetchFailure(
         "An internal error occurred. We are looking into this."

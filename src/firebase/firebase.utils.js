@@ -32,7 +32,7 @@ export const fetchDocumentsFromStore = async (collectionName, from, limit) => {
 
   return {
     ...storeData,
-    videos: data,
+    items: data,
   };
 };
 

@@ -1,8 +1,11 @@
+import { mergeItems } from "../redux.utils";
+
 import GalleryTypes from "./gallery.types";
 
 const INITIAL_STATE = {
   gallery: null,
   error: null,
+  total: 0,
 };
 
 const galleryReducer = (state = INITIAL_STATE, action) => {
@@ -10,7 +13,8 @@ const galleryReducer = (state = INITIAL_STATE, action) => {
     case GalleryTypes.GALLERY_FETCH_SUCCESS:
       return {
         ...state,
-        gallery: addImageToStore(state.gallery, action.payload),
+        gallery: mergeItems(state.gallery, action.payload.items),
+        total: action.payload.total ? action.payload.total : state.total,
         error: null,
       };
     case GalleryTypes.GALLERY_FETCH_FAILURE:
@@ -22,24 +26,6 @@ const galleryReducer = (state = INITIAL_STATE, action) => {
     default:
       return state;
   }
-};
-
-const addImageToStore = (existingallery, newImages = []) => {
-  let gallery = existingallery.map((image) => image);
-  let imageIds = gallery.map((image) => image.id);
-
-  for (let i = 0; i < newImages.length; i++) {
-    const imageItem = newImages[i];
-    const exisitingIndex = imageIds.indexOf(imageItem.id);
-    if (exisitingIndex === -1) {
-      gallery.push(imageItem);
-      imageIds.push(imageItem.id);
-    } else {
-      gallery[exisitingIndex] = imageItem;
-    }
-  }
-
-  return gallery;
 };
 
 export default galleryReducer;

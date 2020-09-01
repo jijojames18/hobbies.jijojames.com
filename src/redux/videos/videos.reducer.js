@@ -13,7 +13,7 @@ const videosReducer = (state = INITIAL_STATE, action) => {
     case VideoTypes.VIDEO_FETCH_SUCCESS:
       return {
         ...state,
-        videos: mergeItems(state.videos, action.payload.videos),
+        videos: mergeItems(state.videos, action.payload.items),
         total: action.payload.total ? action.payload.total : state.total,
         error: null,
       };
