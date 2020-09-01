@@ -5,7 +5,7 @@ import { blogFetchSuccess, blogFetchFailure } from "./blog.actions";
 
 import { fetchDocumentsFromStore } from "../../firebase/firebase.utils";
 
-export function* blogFetchStart(payload) {
+export function* blogFetchStart({ payload }) {
   try {
     const data = yield call(
       fetchDocumentsFromStore,

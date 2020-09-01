@@ -3,7 +3,7 @@ import { mergeItems } from "../redux.utils";
 import BlogTypes from "./blog.types";
 
 const INITIAL_STATE = {
-  blog: null,
+  blog: [],
   error: null,
   total: 0,
 };
