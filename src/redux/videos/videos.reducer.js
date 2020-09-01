@@ -1,8 +1,11 @@
 import VideoTypes from "./videos.types";
 
+import { mergeItems } from "../redux.utils";
+
 const INITIAL_STATE = {
-  videos: null,
+  videos: [],
   error: null,
+  total: 0,
 };
 
 const videosReducer = (state = INITIAL_STATE, action) => {
@@ -10,7 +13,8 @@ const videosReducer = (state = INITIAL_STATE, action) => {
     case VideoTypes.VIDEO_FETCH_SUCCESS:
       return {
         ...state,
-        videos: addVideosToStore(state.videos, action.payload),
+        videos: mergeItems(state.videos, action.payload.videos),
+        total: action.payload.total ? action.payload.total : state.total,
         error: null,
       };
     case VideoTypes.VIDEO_FETCH_FAILURE:
@@ -22,24 +26,6 @@ const videosReducer = (state = INITIAL_STATE, action) => {
     default:
       return state;
   }
-};
-
-const addVideosToStore = (existingVideos, newVideos = []) => {
-  let videos = existingVideos.map((video) => video);
-  let videoIds = videos.map((video) => video.id);
-
-  for (let i = 0; i < newVideos.length; i++) {
-    const newVideo = newVideos[i];
-    const exisitingIndex = videoIds.indexOf(newVideo.id);
-    if (exisitingIndex === -1) {
-      videos.push(newVideo);
-      videoIds.push(newVideo.id);
-    } else {
-      videos[exisitingIndex] = newVideo;
-    }
-  }
-
-  return videos;
 };
 
 export default videosReducer;

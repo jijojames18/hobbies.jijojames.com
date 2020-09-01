@@ -5,7 +5,7 @@ import { videoFetchSuccess, videoFetchFailure } from "./videos.actions";
 
 import { fetchDocumentsFromStore } from "../../firebase/firebase.utils";
 
-export function* videoFetchStart(payload) {
+export function* videoFetchStart({ payload }) {
   try {
     const data = yield call(
       fetchDocumentsFromStore,
@@ -15,6 +15,7 @@ export function* videoFetchStart(payload) {
     );
     yield put(videoFetchSuccess(data));
   } catch (error) {
+    console.log(error);
     yield put(
       videoFetchFailure("An internal error occurred. We are looking into this.")
     );
