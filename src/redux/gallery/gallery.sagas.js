@@ -5,7 +5,7 @@ import { galleryFetchSuccess, galleryFetchFailure } from "./gallery.actions";
 
 import { fetchDocumentsFromStore } from "../../firebase/firebase.utils";
 
-export function* galleryFetchStart(payload) {
+export function* galleryFetchStart({ payload }) {
   try {
     const data = yield call(
       fetchDocumentsFromStore,

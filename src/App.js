@@ -7,6 +7,7 @@ import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import VideosPage from "./views/videos/videos";
 import BlogPage from "./views/blog/blog";
+import GalleryPage from "./views/gallery/gallery";
 import ContactIcon from "./components/contact-icon/contact-icon";
 
 import { GlobalStyle } from "./global.styles";
@@ -20,6 +21,7 @@ function App() {
       <Switch>
         <ErrorBoundary>
           <Suspense fallback={Spinner}>
+            <Route path="/" component={GalleryPage} />
             <Route path="/videos" component={VideosPage} />
             <Route path="/blog" component={BlogPage} />
           </Suspense>
