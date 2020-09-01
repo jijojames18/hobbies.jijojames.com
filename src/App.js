@@ -21,9 +21,9 @@ function App() {
       <Switch>
         <ErrorBoundary>
           <Suspense fallback={Spinner}>
-            <Route path="/" component={GalleryPage} />
-            <Route path="/videos" component={VideosPage} />
-            <Route path="/blog" component={BlogPage} />
+            <Route exact path="/" component={GalleryPage} />
+            <Route exact path="/videos" component={VideosPage} />
+            <Route exact path="/blog" component={BlogPage} />
           </Suspense>
         </ErrorBoundary>
       </Switch>
