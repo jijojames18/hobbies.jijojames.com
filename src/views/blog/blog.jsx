@@ -14,7 +14,7 @@ import BlogItem from "../../components/blog-item/blog-item";
 
 import LoadMoreButton from "../../components/load-more-button/load-more-button";
 
-import { BlogContainer, BlogPosts } from "./blog.styles";
+import { BlogContainer } from "./blog.styles";
 
 const BlogPage = ({ blogFetchStart, blog, total }) => {
   useEffect(() => {
