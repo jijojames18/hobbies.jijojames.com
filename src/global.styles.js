@@ -8,6 +8,7 @@ body {
   height: 100%;
   min-height: 100%;
   overflow-x: hidden;
+  background-color: #232323;
 }
 
 a {
@@ -25,6 +26,10 @@ a {
 span, h1, h2, h3, p, button, input, textarea, label, input::placeholder, textarea::placeholder{
   color: #fff;
   letter-spacing: 0.5px;
+}
+
+dl, ol, ul {
+  margin-bottom: 0;
 }
 
 ul {

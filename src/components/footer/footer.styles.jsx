@@ -60,5 +60,5 @@ export const Copyright = styled.p`
   font-weight: 200;
   font-size: 14px;
   text-transform: uppercase;
-  margin-top: 8px;
+  padding-top: 8px;
 `;

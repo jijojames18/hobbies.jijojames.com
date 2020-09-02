@@ -9,10 +9,12 @@ export const OverlayBackgroundColor = "#0d0d0d";
 export const ContainerComponent = styled.div`
   padding-top: ${ContainerPaddingTop};
   background-color: ${ContentColor};
+  min-height: 100vh;
 `;
 
 export const GalleryContainerComponent = styled.div`
   background-color: ${ContentColor};
+  min-height: 100vh;
 `;
 
 export const ButtonStyles = css`
