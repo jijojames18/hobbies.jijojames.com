@@ -9,6 +9,7 @@ import VideosPage from "./views/videos/videos";
 import BlogPage from "./views/blog/blog";
 import GalleryPage from "./views/gallery/gallery";
 import ContactIcon from "./components/contact-icon/contact-icon";
+import PageNotFound from "./components/page-not-found/page-not-found";
 
 import { GlobalStyle } from "./global.styles";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,15 +19,16 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Header />
-      <Switch>
-        <ErrorBoundary>
-          <Suspense fallback={Spinner}>
+      <ErrorBoundary>
+        <Suspense fallback={Spinner}>
+          <Switch>
             <Route exact path="/" component={GalleryPage} />
             <Route exact path="/videos" component={VideosPage} />
             <Route exact path="/blog" component={BlogPage} />
-          </Suspense>
-        </ErrorBoundary>
-      </Switch>
+            <Route component={PageNotFound} />
+          </Switch>
+        </Suspense>
+      </ErrorBoundary>
       <ContactIcon />
       <Footer />
     </div>

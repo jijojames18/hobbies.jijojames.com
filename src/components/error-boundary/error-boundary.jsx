@@ -29,7 +29,7 @@ class ErrorBoundary extends React.Component {
         <ErrorImageOverlay>
           <ErrorImageContainer />
           <ErrorImageText>
-            Oops! We cant seem to find the page you are looking for
+            Oops! This is embarrasing. Something really went wrong...
           </ErrorImageText>
         </ErrorImageOverlay>
       );
