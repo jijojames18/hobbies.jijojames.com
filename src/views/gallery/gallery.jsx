@@ -14,7 +14,7 @@ import GalleryItem from "../../components/gallery-item/gallery-item";
 
 import LoadMoreButton from "../../components/load-more-button/load-more-button";
 
-import { GalleryContainer } from "./gallery.styles";
+import { GalleryContainerComponent } from "../../styles/common.styles";
 
 const GalleryPage = ({ galleryFetchStart, gallery, total }) => {
   useEffect(() => {
@@ -32,7 +32,7 @@ const GalleryPage = ({ galleryFetchStart, gallery, total }) => {
   };
 
   return (
-    <GalleryContainer className="gallery-container">
+    <GalleryContainerComponent className="gallery-container">
       <Container fluid>
         <Row>
           {gallery.map((image) => {
@@ -40,7 +40,6 @@ const GalleryPage = ({ galleryFetchStart, gallery, total }) => {
           })}
         </Row>
       </Container>
-      &nbsp; &nbsp;
       <Container>
         <Row>
           {gallery.length < total ? (
@@ -50,7 +49,7 @@ const GalleryPage = ({ galleryFetchStart, gallery, total }) => {
           )}
         </Row>
       </Container>
-    </GalleryContainer>
+    </GalleryContainerComponent>
   );
 };
 

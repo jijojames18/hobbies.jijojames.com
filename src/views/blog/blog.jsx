@@ -14,7 +14,7 @@ import BlogItem from "../../components/blog-item/blog-item";
 
 import LoadMoreButton from "../../components/load-more-button/load-more-button";
 
-import { BlogContainer } from "./blog.styles";
+import { ContainerComponent } from "../../styles/common.styles";
 
 const BlogPage = ({ blogFetchStart, blog, total }) => {
   useEffect(() => {
@@ -32,13 +32,12 @@ const BlogPage = ({ blogFetchStart, blog, total }) => {
   };
 
   return (
-    <BlogContainer>
+    <ContainerComponent>
       <Container>
         {blog.map((blogItem) => {
           return <BlogItem key={blogItem.id} blog={blogItem} />;
         })}
       </Container>
-      &nbsp; &nbsp;
       <Container>
         <Row>
           {blog.length < total ? (
@@ -48,7 +47,7 @@ const BlogPage = ({ blogFetchStart, blog, total }) => {
           )}
         </Row>
       </Container>
-    </BlogContainer>
+    </ContainerComponent>
   );
 };
 

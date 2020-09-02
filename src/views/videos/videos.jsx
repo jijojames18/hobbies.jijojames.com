@@ -13,7 +13,7 @@ import {
 import VideoItem from "../../components/video-item/video-item";
 import LoadMoreButton from "../../components/load-more-button/load-more-button";
 
-import { VideosContainer } from "./videos.styles";
+import { ContainerComponent } from "../../styles/common.styles";
 
 const VideosPage = ({ videoFetchStart, videos, total }) => {
   useEffect(() => {
@@ -31,7 +31,7 @@ const VideosPage = ({ videoFetchStart, videos, total }) => {
   };
 
   return (
-    <VideosContainer>
+    <ContainerComponent>
       <Container>
         <Row>
           {videos.map((video) => {
@@ -39,7 +39,6 @@ const VideosPage = ({ videoFetchStart, videos, total }) => {
           })}
         </Row>
       </Container>
-      &nbsp; &nbsp;
       <Container>
         <Row>
           {videos.length < total ? (
@@ -49,7 +48,7 @@ const VideosPage = ({ videoFetchStart, videos, total }) => {
           )}
         </Row>
       </Container>
-    </VideosContainer>
+    </ContainerComponent>
   );
 };
 
