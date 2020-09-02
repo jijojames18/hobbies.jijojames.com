@@ -17,19 +17,12 @@ export const Nav = styled.nav`
 `;
 
 export const LogoContainer = styled.div`
-  margin-left: 30px;
+  margin-left: 32px;
 `;
 
 export const LogoLink = styled.a`
   font-size: 28px;
-  color: #fff;
-  text-decoration: none;
   letter-spacing: 0.5px;
-
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
 `;
 
 export const MenuIcon = styled.div`
@@ -37,11 +30,11 @@ export const MenuIcon = styled.div`
   border: 1px solid #fff;
   width: 50px;
   height: 50px;
-  margin-right: 30px;
+  margin-right: 32px;
   position: relative;
   cursor: pointer;
   transition: background 0.5s;
-  border-radius: 5px;
+  border-radius: 4px;
 
   &.active {
     background: rgba(250, 250, 250, 0.2);

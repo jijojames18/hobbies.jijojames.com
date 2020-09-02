@@ -29,7 +29,7 @@ const BlogItem = ({ blog: { date, title, desc, url, image } }) => {
           </TextContent>
         </Col>
         <Col md={4}>
-          <BlogImage src={image} height="460px" width="360px" alt={title} />
+          <BlogImage src={image} height="400px" width="360px" alt={title} />
         </Col>
       </Row>
     </BlogPost>

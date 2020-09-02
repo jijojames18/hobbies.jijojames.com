@@ -10,7 +10,7 @@ import FormInput from "../form-input/form-input";
 import FormTextArea from "../form-input/form-textarea";
 import CustomButton from "../custom-button/custom-button";
 
-import { ModalBody } from "./contact-form.styles";
+import { ModalBody, HelloHeading } from "./contact-form.styles";
 
 import { contactFormSubmitStart } from "../../redux/contact-form/contact-form.actions";
 
@@ -81,6 +81,11 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
     <ModalBody className="contact-form">
       <Col md={{ span: 6, offset: 3 }}>
         <Form onSubmit={onSubmit}>
+          <Row>
+            <Col md={12}>
+              <HelloHeading>Say hello</HelloHeading>
+            </Col>
+          </Row>
           {alert.visible ? (
             <Row>
               <Col md={12}>

@@ -9,8 +9,6 @@ export const PopupIcon = styled.div`
   right: 30px;
   z-index: 300;
   display: inline-block;
-  width: 60px;
-  height: 60px;
 `;
 
 export const PopupIconButton = styled.button`

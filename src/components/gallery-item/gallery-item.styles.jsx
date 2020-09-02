@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const GalleryItemContainer = styled.div`
   text-align: center;
-  line-height: 150%;
-  text-transform: lowercase;
   cursor: pointer;
   &:hover {
     h1 {
@@ -35,23 +33,18 @@ export const GalleryItemHoverContent = styled.div`
 
 export const GalleryItemPlace = styled.h1`
   position: relative;
-  font-size: 22px;
+  font-size: 24px;
   text-transform: uppercase;
-  color: #fff;
   display: inline-block;
-  padding-left: 20px;
-  line-height: 15px;
+  padding-left: 8px;
   transform: translateY(25px);
   transition: 0.5s ease-in-out;
-  letter-spacing: 0.5px;
 `;
 
 export const GalleryItemDate = styled.p`
-  padding-left: 20px;
+  padding-left: 8px;
   font-weight: 300 !important;
-  letter-spacing: 0.5px;
   font-size: 14px;
-  color: #fff;
   opacity: 0;
   transform: translateY(10px);
   transition: 0.5s ease-in-out;
