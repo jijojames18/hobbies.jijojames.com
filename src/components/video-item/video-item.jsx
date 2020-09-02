@@ -4,7 +4,7 @@ import { VideoItemContainer } from "./video-item.styles";
 
 const VideoItem = ({ video }) => {
   return (
-    <Col md={4} sm={6}>
+    <Col sm={12} md={6} lg={4}>
       <VideoItemContainer>
         <iframe
           title={"My video" + video.id}
