@@ -1,56 +1,41 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 
 import { galleryFetchStart } from "../../redux/gallery/gallery.actions";
 import {
+  selectGalleryIsLoading,
   selectGalleryList,
   selectGalleryTotal,
 } from "../../redux/gallery/gallery.selectors";
 import GalleryItem from "../../components/gallery-item/gallery-item";
-import LoadMoreButton from "../../components/load-more-button/load-more-button";
+import Spinner from "../../components/spinner/spinner";
+import ViewPage from "../view";
 import { GalleryContainerComponent } from "../../styles/common.styles";
 
-const GalleryPage = ({ galleryFetchStart, gallery, total }) => {
+const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
   useEffect(() => {
     galleryFetchStart({
       from: 0,
     });
   }, [galleryFetchStart]);
 
-  const loadMoreClicked = (event) => {
-    galleryFetchStart({
-      from: gallery.length,
-    });
-    event.preventDefault();
-    event.stopPropagation();
-  };
-
-  return (
-    <GalleryContainerComponent className="gallery-container">
-      <Container fluid>
-        <Row>
-          {gallery.map((image) => {
-            return <GalleryItem key={image.id} gallery={image} />;
-          })}
-        </Row>
-      </Container>
-      <Container>
-        <Row>
-          {gallery.length < total ? (
-            <LoadMoreButton loadMoreClicked={loadMoreClicked} />
-          ) : (
-            ""
-          )}
-        </Row>
-      </Container>
-    </GalleryContainerComponent>
+  return isLoading ? (
+    <Spinner />
+  ) : (
+    <ViewPage
+      RenderComponent={GalleryItem}
+      fetchStart={galleryFetchStart}
+      total={total}
+      items={gallery}
+      ContainerComponent={GalleryContainerComponent}
+      page="gallery"
+    />
   );
 };
 
 const mapStateToProps = createStructuredSelector({
+  isLoading: selectGalleryIsLoading,
   gallery: selectGalleryList,
   total: selectGalleryTotal,
 });

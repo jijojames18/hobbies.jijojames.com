@@ -12,7 +12,7 @@ import {
   GalleryItemImage,
 } from "./gallery-item.styles";
 
-const GalleryItem = ({ gallery: { place, date, url } }) => {
+const GalleryItem = ({ item: { place, date, url } }) => {
   return (
     <Col md={4} sm={6}>
       <GalleryItemContainer>

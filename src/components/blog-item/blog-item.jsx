@@ -12,7 +12,7 @@ import {
   BlogImage,
 } from "./blog-item.styles";
 
-const BlogItem = ({ blog: { date, title, desc, url, image } }) => {
+const BlogItem = ({ item: { date, title, desc, url, image } }) => {
   return (
     <BlogPost>
       <Row>
