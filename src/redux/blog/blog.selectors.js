@@ -11,3 +11,8 @@ export const selectBlogTotal = createSelector(
   [selectBlog],
   (state) => state.total
 );
+
+export const selectBlogIsLoading = createSelector(
+  [selectBlog],
+  (state) => state.isLoading
+);

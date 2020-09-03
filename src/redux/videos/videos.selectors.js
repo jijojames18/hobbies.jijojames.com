@@ -11,3 +11,8 @@ export const selectVideoTotal = createSelector(
   [selectVideos],
   (state) => state.total
 );
+
+export const selectVideoIsLoading = createSelector(
+  [selectVideos],
+  (state) => state.isLoading
+);

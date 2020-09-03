@@ -11,3 +11,8 @@ export const selectGalleryTotal = createSelector(
   [selectGallery],
   (state) => state.total
 );
+
+export const selectGalleryIsLoading = createSelector(
+  [selectGallery],
+  (state) => state.isLoading
+);
