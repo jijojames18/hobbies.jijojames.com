@@ -1,4 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## jijojames.com. 
+Portfolio website built using React and Bootstrap React.  
+The website is hosted at [jijojames.com](https://jijojames.com). For testing purposes, it is deployed to a [Heroku dyno](https://nameless-garden-94935.herokuapp.com/) for each commit into `master` branch.  
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The data is stored in Google Firestore and is fetched using the JavaScript Admin SDK for Firebase. The app uses Redux to store the data, Redux-saga for handling side-effects and React router for navigation.  
+
+### Styling
+Styling is done using `styled-components`.  
+
+## Database
+The service uses Firestore provide by Google Firebase for storing the necessary data  
+
+`Collection` : `blog`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+date | String | Date on which the blog was posted |
+desc | String | Short description of blog post |
+id   | Number | Unique id value |
+image| String | Title image url |
+title| String | Title of the blog post |
+url  | String | Blogger url |
+
+`Collection` : `videos`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+id   | Number | Unique id value |
+url  | String | Youtube url |
+
+
+`Collection` : `gallery`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+date | String | Date on which the picture was taken |
+id   | Number | Unique id value |
+place| String | Place at which the picture was taken |
+url  | String | Url of image hosted at a 3rd party website |
+
+At the time of development, firebase didn't have good way to obtain the total number of documents in a collection. So I had to create a new collection which holds the total for each of the collections.  
+
+`Collection` : `total`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+blog | Number | Total number of blog posts |
+gallery | Number | Total number of images |
+videos | Number | Total number of videos |
+
+## Environment Variables
+The service requires a number of config data to be present as environment variables.  
+
+Variable | Description |
+------|-------------|
+REACT_APP_PERSIST_KEY | Key in local storage where the data is persisted by `redux-persist` |
+REACT_APP_RECAPTCHA_SITE_KEY | Google ReCaptcha site key |
+REACT_APP_POST_FEEDBACK_ENDPOINT | Rest endpoint to post the contact form data |
+REACT_APP_FIREBASE_CONFIG | Firebase SDK config |
 
 ## Available Scripts
 
@@ -25,44 +82,14 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Development flow
+1. Clone the repository to your local machine.
+2. Copy env.example as .env.
+3. Replace the keys inside the .env with the correct values.
+4. Run `npm install` and `npm start` to setup the local environment.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Reference
+* [Google Firestore](https://firebase.google.com/docs/firestore)
+* [Firebase Admin Console](https://console.firebase.google.com/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+* [Google ReCaptcha](https://developers.google.com/recaptcha/intro)
