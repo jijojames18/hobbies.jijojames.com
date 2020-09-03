@@ -2,9 +2,9 @@ import { createSelector } from "reselect";
 
 export const selectBlog = (state) => state.blog;
 
-export const selectBlogList = createSelector(
+export const selectBlogPosts = createSelector(
   [selectBlog],
-  (state) => state.blog
+  (state) => state.posts
 );
 
 export const selectBlogTotal = createSelector(

@@ -1,5 +1,4 @@
 import VideoTypes from "./videos.types";
-
 import { mergeItems } from "../redux.utils";
 
 const INITIAL_STATE = {
@@ -20,6 +19,7 @@ const videosReducer = (state = INITIAL_STATE, action) => {
     case VideoTypes.VIDEO_FETCH_FAILURE:
       return {
         ...state,
+        total: 0,
         error: action.payload,
       };
     case VideoTypes.VIDEO_FETCH_START:

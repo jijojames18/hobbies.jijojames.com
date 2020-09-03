@@ -2,7 +2,6 @@ import { takeLatest, put, all, call } from "redux-saga/effects";
 import axios from "axios";
 
 import ContactFormTypes from "./contact-form.types";
-
 import {
   contactFormSubmitSuccess,
   contactFormSubmitFailure,

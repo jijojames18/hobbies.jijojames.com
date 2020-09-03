@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import { FontColor, ContentColor } from "./styles/common.styles";
+
 export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
@@ -8,13 +10,13 @@ body {
   height: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  background-color: #232323;
+  background-color: ${ContentColor};
 }
 
 a {
   font-size: 24px;
   font-weight: 300;
-  color: #fff;
+  color: ${FontColor};
   text-decoration: none;
   transition: all 0.5s;
   &:hover {
@@ -24,7 +26,7 @@ a {
 }
 
 span, h1, h2, h3, p, button, input, textarea, label, input::placeholder, textarea::placeholder{
-  color: #fff;
+  color: ${FontColor};
   letter-spacing: 0.5px;
 }
 

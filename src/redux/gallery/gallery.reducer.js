@@ -1,5 +1,4 @@
 import { mergeItems } from "../redux.utils";
-
 import GalleryTypes from "./gallery.types";
 
 const INITIAL_STATE = {
@@ -20,6 +19,7 @@ const galleryReducer = (state = INITIAL_STATE, action) => {
     case GalleryTypes.GALLERY_FETCH_FAILURE:
       return {
         ...state,
+        total: 0,
         error: action.payload,
       };
     case GalleryTypes.GALLERY_FETCH_START:

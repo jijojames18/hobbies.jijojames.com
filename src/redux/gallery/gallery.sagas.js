@@ -2,7 +2,6 @@ import { takeLatest, put, all, call } from "redux-saga/effects";
 
 import GalleryTypes from "./gallery.types";
 import { galleryFetchSuccess, galleryFetchFailure } from "./gallery.actions";
-
 import { fetchDocumentsFromStore } from "../../firebase/firebase.utils";
 
 export function* galleryFetchStart({ payload }) {

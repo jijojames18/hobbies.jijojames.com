@@ -2,7 +2,6 @@ import { takeLatest, put, all, call } from "redux-saga/effects";
 
 import VideoTypes from "./videos.types";
 import { videoFetchSuccess, videoFetchFailure } from "./videos.actions";
-
 import { fetchDocumentsFromStore } from "../../firebase/firebase.utils";
 
 export function* videoFetchStart({ payload }) {

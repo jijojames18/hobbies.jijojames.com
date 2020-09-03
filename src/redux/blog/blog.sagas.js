@@ -2,7 +2,6 @@ import { takeLatest, put, all, call } from "redux-saga/effects";
 
 import BlogTypes from "./blog.types";
 import { blogFetchSuccess, blogFetchFailure } from "./blog.actions";
-
 import { fetchDocumentsFromStore } from "../../firebase/firebase.utils";
 
 export function* blogFetchStart({ payload }) {

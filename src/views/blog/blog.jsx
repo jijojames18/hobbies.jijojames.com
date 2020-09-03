@@ -6,17 +6,14 @@ import Row from "react-bootstrap/Row";
 
 import { blogFetchStart } from "../../redux/blog/blog.actions";
 import {
-  selectBlogList,
+  selectBlogPosts,
   selectBlogTotal,
 } from "../../redux/blog/blog.selectors";
-
 import BlogItem from "../../components/blog-item/blog-item";
-
 import LoadMoreButton from "../../components/load-more-button/load-more-button";
-
 import { ContainerComponent } from "../../styles/common.styles";
 
-const BlogPage = ({ blogFetchStart, blog, total }) => {
+const BlogPage = ({ blogFetchStart, posts, total }) => {
   useEffect(() => {
     blogFetchStart({
       from: 0,
@@ -25,7 +22,7 @@ const BlogPage = ({ blogFetchStart, blog, total }) => {
 
   const loadMoreClicked = (event) => {
     blogFetchStart({
-      from: blog.length,
+      from: posts.length,
     });
     event.preventDefault();
     event.stopPropagation();
@@ -34,13 +31,13 @@ const BlogPage = ({ blogFetchStart, blog, total }) => {
   return (
     <ContainerComponent>
       <Container>
-        {blog.map((blogItem) => {
+        {posts.map((blogItem) => {
           return <BlogItem key={blogItem.id} blog={blogItem} />;
         })}
       </Container>
       <Container>
         <Row>
-          {blog.length < total ? (
+          {posts.length < total ? (
             <LoadMoreButton loadMoreClicked={loadMoreClicked} />
           ) : (
             ""
@@ -52,7 +49,7 @@ const BlogPage = ({ blogFetchStart, blog, total }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  blog: selectBlogList,
+  posts: selectBlogPosts,
   total: selectBlogTotal,
 });
 

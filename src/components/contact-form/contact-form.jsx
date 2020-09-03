@@ -7,7 +7,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Alert from "react-bootstrap/Alert";
 
 import FormInput from "../form-input/form-input";
-import FormTextArea from "../form-input/form-textarea";
 import CustomButton from "../custom-button/custom-button";
 
 import { ModalBody, HelloHeading } from "./contact-form.styles";
@@ -70,7 +69,7 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
       contactFormSubmitStart({
         formData: { ...userDetails },
         captcha,
-        site: "stpeterstvm.org",
+        site: "jijojames.com",
       });
     }
     event.preventDefault();
@@ -133,14 +132,15 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
           <Row>
             <Col md={12}>
               <Form.Group controlId="formGroupComments">
-                <FormTextArea
+                <FormInput
+                  type="textarea"
                   name="comments"
                   rows="6"
                   value={comments}
                   onChange={handleChange}
                   placeholder="Your message..."
                   required
-                ></FormTextArea>
+                ></FormInput>
               </Form.Group>
             </Col>
           </Row>
@@ -155,9 +155,7 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
           <Row>
             <Col md={12}>
               <Form.Group>
-                <CustomButton type="submit" id="form-submit">
-                  Send Message Now
-                </CustomButton>
+                <CustomButton type="submit">Send Message Now</CustomButton>
               </Form.Group>
             </Col>
           </Row>

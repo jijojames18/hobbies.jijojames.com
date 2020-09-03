@@ -1,5 +1,6 @@
 import React from "react";
-
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
 import {
   FooterContainer,
   SocialNav,
@@ -12,9 +13,6 @@ import {
   GithubImage,
   Copyright,
 } from "./footer.styles";
-
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
 
 const Footer = () => (
   <FooterContainer>

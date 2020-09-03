@@ -9,11 +9,8 @@ import {
   selectGalleryList,
   selectGalleryTotal,
 } from "../../redux/gallery/gallery.selectors";
-
 import GalleryItem from "../../components/gallery-item/gallery-item";
-
 import LoadMoreButton from "../../components/load-more-button/load-more-button";
-
 import { GalleryContainerComponent } from "../../styles/common.styles";
 
 const GalleryPage = ({ galleryFetchStart, gallery, total }) => {

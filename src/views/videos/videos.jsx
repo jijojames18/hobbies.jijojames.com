@@ -9,10 +9,8 @@ import {
   selectVideoList,
   selectVideoTotal,
 } from "../../redux/videos/videos.selectors";
-
 import VideoItem from "../../components/video-item/video-item";
 import LoadMoreButton from "../../components/load-more-button/load-more-button";
-
 import { ContainerComponent } from "../../styles/common.styles";
 
 const VideosPage = ({ videoFetchStart, videos, total }) => {

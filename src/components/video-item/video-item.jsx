@@ -7,7 +7,7 @@ const VideoItem = ({ video }) => {
     <Col sm={12} md={6} lg={4}>
       <VideoItemContainer>
         <iframe
-          title={"My video" + video.id}
+          title={"My video " + video.id}
           width="335"
           height="315"
           src={video.url}
