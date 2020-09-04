@@ -1,122 +1,95 @@
-## Code base for website jijojames.com. 
-This project uses React for building the user interface. In total, there are 3 pages in the website. Each one of them receives the required data by calling PHP REST API's constructed using Slim Framework. Technical details of each page is shown below.
+## jijojames.com. 
+Portfolio website built using React and Bootstrap React.  
+The website is hosted at [jijojames.com](https://jijojames.com). For testing purposes, it is deployed to a [Heroku dyno](https://nameless-garden-94935.herokuapp.com/) for each commit into `master` branch.  
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The data is stored in Google Firestore and is fetched using the JavaScript Admin SDK for Firebase. The app uses Redux to store the data, Redux-saga for handling side-effects and React router for navigation.  
 
-1. Index
-  The index page also known as gallery page calls REST API `/v1/gallery` to fetch details of all images from gallery table. The URL of the 
-  image along with metadata is returned in the call which is then rendered using img tag.
-2. Blog
-  The blog page calls REST API `/v1/blog` to fetch details of all blog posts from blog table. The URL of the blog post in blogger along with
-  a short description of the post is returned in the call.
-3. Videos
-  The videos page calls REST API `/v1/videos` to fetch details of all videos from video table. The iframe of the video is returned in
-  the call.
+### Styling
+Styling is done using `styled-components`.  
 
-In addition, there is a REST endpoint `/v1/contact` which receives the details provided by user in the contact form and sends an email.
+## Database
+The service uses Firestore provide by Google Firebase for storing the necessary data  
 
-### CSS
-Styles are saved as scss files. Common styles are stored inside styles.scss and page specific styles are stored in corresponding partial files(_gallery.scss, _blog.scss, _videos.scss). The html files have reference to only style.css file and hence the changes made to scss file needs to be converted to css and stored inside style.css file. This can be done by running `sass css/styles.scss css/style.css` everytime a change is done or by watching for changes and re-compiling css automatically using `sass --watch css/styles.scss css/style.css`.
+`Collection` : `blog`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+date | String | Date on which the blog was posted |
+desc | String | Short description of blog post |
+id   | Number | Unique id value |
+image| String | Title image url |
+title| String | Title of the blog post |
+url  | String | Blogger url |
 
-### Database
-There are 3 tables used in the project. The rest endpoints query the tables using PDO.
-
-1. gallery
-
-  | Name     |    Type      |                            |
-  | -------- | ------------ | -------------------------- |
-  | slno     | INT(10)      | PRIMARY KEY AUTO INCREMENT |
-  | file_url | TEXT         |                            |
-  | place    | TEXT         |                            |
-  | date     | VARCHAR(255) |                            |
-
-
-2. blog
-
-  | Name        |    Type      |                            |
-  | ----------- | ------------ | -------------------------- |
-  | slno        | INT(10)      | PRIMARY KEY AUTO INCREMENT |
-  | title       | VARCHAR(255) |                            |
-  | date        | VARCHAR(255) |                            |
-  | short_desc  | TEXT         |                            |
-  | image       | TEXT         |                            |
-  | blogger_url | TEXT         |                            |
+`Collection` : `videos`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+id   | Number | Unique id value |
+url  | String | Youtube url |
 
 
-3. videos
+`Collection` : `gallery`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+date | String | Date on which the picture was taken |
+id   | Number | Unique id value |
+place| String | Place at which the picture was taken |
+url  | String | Url of image hosted at a 3rd party website |
 
-  | Name        |    Type      |                            |
-  | ----------- | ------------ | -------------------------- |
-  | slno        | INT(10)      | PRIMARY KEY AUTO INCREMENT |
-  | youtube_url | VARCHAR(255) |                            |
+At the time of development, firebase didn't have good way to obtain the total number of documents in a collection. So I had to create a new collection which holds the total for each of the collections.  
 
-Full REST endpoint specification is given below.
+`Collection` : `total`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+blog | Number | Total number of blog posts |
+gallery | Number | Total number of images |
+videos | Number | Total number of videos |
 
-### GET	rest/v1/gallery	
-Request: {}	
+## Environment Variables
+The service requires a number of config data to be present as environment variables.  
 
-Response: Array of objects of format
+Variable | Description |
+------|-------------|
+REACT_APP_PERSIST_KEY | Key in local storage where the data is persisted by `redux-persist` |
+REACT_APP_RECAPTCHA_SITE_KEY | Google ReCaptcha site key |
+REACT_APP_POST_FEEDBACK_ENDPOINT | Rest endpoint to post the contact form data |
+REACT_APP_FIREBASE_CONFIG | Firebase SDK config |
 
-| Name     |    Type      |
-| -------- | ------------ |
-| slno     | NUMBER       |
-| file_url | STRING       |
-| place    | STRING       |
-| date     | STRING       |
+## Available Scripts
 
-### GET	rest/v1/blog	
-Request: {}		
+In the project directory, you can run:
 
-Response: Array of objects of format
+### `npm start`
 
-| Name        |    Type      |
-| ----------- | ------------ |
-| slno        | NUMBER       |
-| title       | STRING       |
-| date        | STRING       |
-| short_desc  | STRING       |
-| image       | STRING       |
-| blogger_url | STRING       |
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### GET	rest/v1/videos	
-Request: {}		
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-Response: Array of objects of format
+### `npm test`
 
-| Name        |    Type      |
-| ----------- | ------------ |
-| slno        | NUMBER       |
-| youtube_url | STRING       |
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### GET	rest/v1/contact  
-Request: Object of format
+### `npm run build`
 
-| Name     |    Type      |
-| -------- | ------------ |
-| name     | STRING       |
-| email    | STRING       |
-| message  | STRING       |
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Response: {}
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
+## Development flow
+1. Clone the repository to your local machine.
+2. Copy env.example as .env.
+3. Replace the keys inside the .env with the correct values.
+4. Run `npm install` and `npm start` to setup the local environment.
 
-The website uses the following libraries for rendering the user interface.
-1. Jquery v1.11.2
-2. Twitter Bootstrap v3.3.1
-3. Lightbox (http://lokeshdhakar.com/projects/lightbox2/)
-4. Modernizr 2.8.3
-
-
-## Build Scripts
-
-The project uses ant and npm to build the required files in the `dist` folder of the repository. 
-
-### `npm run transplie`
-
-Generates the transpiled js files(gallery.js, video.js, blog.js) in the dist folder. Note : For development purposes, the ES6 files are transpiled on load by the browser. This is done by adding `text/babel` to the script references.
-
-
-### `ant clean`
-
-Removes the `dist` folder
-
-### `ant build -DdbHost=<DBHOST> -DdbUser=<DBUSER> -DdbPassword=<DBPASSWORD> -DdbName=<DBNAME>`
-Replaces the constants in `bootstrap.php` with the command line arguments. Combines all css files into a single style.css file. Moves all static image resources into the `img` folder. Combine all library files into a single file `vendor.js`. Transpile the ES6 files. Replaces all script and link tags in html files with the bundled file references.
+### Reference
+* [Google Firestore](https://firebase.google.com/docs/firestore)
+* [Firebase Admin Console](https://console.firebase.google.com/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+* [Google ReCaptcha](https://developers.google.com/recaptcha/intro)
