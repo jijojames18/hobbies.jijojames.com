@@ -7,7 +7,7 @@ import {
   contactFormSubmitFailure,
 } from "./contact-form.actions";
 
-export function* sendContactFormRequest(payload) {
+export function* sendContactFormRequest({ payload }) {
   try {
     yield axios.post(
       process.env.REACT_APP_POST_FEEDBACK_ENDPOINT,
