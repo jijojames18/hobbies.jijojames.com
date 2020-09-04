@@ -1,6 +1,6 @@
 ## jijojames.com. 
 Portfolio website built using React and Bootstrap React.  
-The website is hosted at [jijojames.com](https://jijojames.com). For testing purposes, it is deployed to a [Heroku dyno](https://nameless-garden-94935.herokuapp.com/) for each commit into `master` branch.  
+The website is deployed at [jijojames.com](https://jijojames.com) for each commit into `master` branch.  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The data is stored in Google Firestore and is fetched using the JavaScript Admin SDK for Firebase. The app uses Redux to store the data, Redux-saga for handling side-effects and React router for navigation.  
 
 ### Styling
