@@ -7,7 +7,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
 import App from "./App";
 
-test("renders learn react link", () => {
+test("renders app", () => {
   const { getByText } = render(
     <Provider store={store}>
       <BrowserRouter>
