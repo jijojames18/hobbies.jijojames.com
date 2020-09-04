@@ -13,7 +13,7 @@ css/style.css.map# See https://help.github.com/articles/ignoring-files/ for more
 
 # production
 /build
-buid.zip
+build.zip
 
 # misc
 .DS_Store
