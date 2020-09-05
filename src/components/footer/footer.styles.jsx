@@ -3,6 +3,7 @@ import fbImage from "../../assets/icon-facebook.png";
 import twitterImage from "../../assets/icon-twitter.png";
 import instaImage from "../../assets/icon-instagram.png";
 import githubImage from "../../assets/icon-github.png";
+import linkedinImage from "../../assets/icon-linkedin.png";
 
 const ImageSize = css`
   width: 20px;
@@ -52,6 +53,11 @@ export const InstagramImage = styled.div`
 
 export const GithubImage = styled.div`
   background-image: url(${githubImage});
+  ${ImageSize}
+`;
+
+export const LinkedinImage = styled.div`
+  background-image: url(${linkedinImage});
   ${ImageSize}
 `;
 

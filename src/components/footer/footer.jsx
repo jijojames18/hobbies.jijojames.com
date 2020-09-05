@@ -11,6 +11,7 @@ import {
   TwitterImage,
   InstagramImage,
   GithubImage,
+  LinkedinImage,
   Copyright,
 } from "./footer.styles";
 
@@ -43,6 +44,15 @@ const Footer = () => (
             target="_blank"
           >
             <InstagramImage alt="Instagram Page" />
+          </Link>
+        </Li>
+        <Li>
+          <Link
+            href="https://www.linkedin.com/in/jijojames18"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <LinkedinImage alt="LinkedIn Page" />
           </Link>
         </Li>
         <Li>
