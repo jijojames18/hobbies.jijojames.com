@@ -8,6 +8,7 @@ import Footer from "./components/footer/footer";
 import VideosPage from "./views/videos/videos";
 import BlogPage from "./views/blog/blog";
 import GalleryPage from "./views/gallery/gallery";
+import ProjectsPage from "./views/projects/projects";
 import ContactIcon from "./components/contact-icon/contact-icon";
 import PageNotFound from "./components/page-not-found/page-not-found";
 
@@ -23,6 +24,7 @@ function App() {
         <Suspense fallback={Spinner}>
           <Switch>
             <Route exact path="/" component={GalleryPage} />
+            <Route exact path="/projects" component={ProjectsPage} />
             <Route exact path="/videos" component={VideosPage} />
             <Route exact path="/blog" component={BlogPage} />
             <Route component={PageNotFound} />
