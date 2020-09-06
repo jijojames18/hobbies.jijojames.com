@@ -29,7 +29,7 @@ const ViewPage = ({
           })}
         </Container>
       );
-    } else if (page === "videos") {
+    } else if (page === "videos" || page === "projects") {
       return (
         <Container>
           <Row>
