@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { projectsFetchStart } from "../../redux/projects/projects.actions";
-import {
-  selectProjectList,
-  selectProjectsTotal,
-  selectProjectsIsLoading,
-} from "../../redux/projects/projects.selectors";
+import { selectProjectsIsLoading } from "../../redux/projects/projects.selectors";
+import ProjectsRadioButton from "../../components/projects-radio-button/projects-radio-button";
 import Spinner from "../../components/spinner/spinner";
+import { ContainerComponent } from "../../styles/common.styles";
 
-const ProjectsPage = ({ isLoading, projectsFetchStart, projects, total }) => {
-  return isLoading ? <Spinner /> : "";
+const ProjectsPage = ({ isLoading, projectsFetchStart }) => {
+  useEffect(() => {
+    projectsFetchStart({
+      from: 0,
+    });
+  }, [projectsFetchStart]);
+
+  return isLoading ? (
+    <Spinner />
+  ) : (
+    <ContainerComponent>
+      <ProjectsRadioButton></ProjectsRadioButton>
+    </ContainerComponent>
+  );
 };
 
 const mapStateToProps = createStructuredSelector({
   isLoading: selectProjectsIsLoading,
-  projects: selectProjectList,
-  total: selectProjectsTotal,
 });
 
 const mapDispatchToProps = (dispatch) => ({

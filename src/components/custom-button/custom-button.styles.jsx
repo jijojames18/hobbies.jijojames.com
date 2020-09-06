@@ -7,4 +7,9 @@ export const CustomButtonContainer = styled.button`
   border-right: none;
   border-left: none;
   ${ButtonStyles}
+
+  &.selected {
+    opacity: 0.5;
+    outline: none;
+  }
 `;
