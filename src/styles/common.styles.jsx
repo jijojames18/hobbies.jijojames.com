@@ -14,6 +14,8 @@ export const ContainerComponent = styled.div`
   min-height: 100vh;
 `;
 
+export const ProjectsComponent = styled.div``;
+
 export const GalleryContainerComponent = styled.div`
   background-color: ${ContentColor};
   min-height: 100vh;

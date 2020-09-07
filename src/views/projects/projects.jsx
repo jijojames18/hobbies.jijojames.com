@@ -12,7 +12,10 @@ import ProjectCardItem from "../../components/project-card-item/project-card-ite
 import ProjectsRadioButton from "../../components/projects-radio-button/projects-radio-button";
 import Spinner from "../../components/spinner/spinner";
 import ViewPage from "../view";
-import { ContainerComponent } from "../../styles/common.styles";
+import {
+  ProjectsComponent,
+  ContainerComponent,
+} from "../../styles/common.styles";
 
 const ProjectsPage = ({ isLoading, projectsFetchStart, projects, total }) => {
   useEffect(() => {
@@ -25,16 +28,15 @@ const ProjectsPage = ({ isLoading, projectsFetchStart, projects, total }) => {
     <Spinner />
   ) : (
     <ContainerComponent>
-      <ProjectsRadioButton>
-        <ViewPage
-          RenderComponent={ProjectCardItem}
-          fetchStart={projectsFetchStart}
-          total={total}
-          items={projects}
-          ContainerComponent={ContainerComponent}
-          page="projects"
-        />
-      </ProjectsRadioButton>
+      <ProjectsRadioButton />
+      <ViewPage
+        RenderComponent={ProjectCardItem}
+        fetchStart={projectsFetchStart}
+        total={total}
+        items={projects}
+        ContainerComponent={ProjectsComponent}
+        page="projects"
+      />
     </ContainerComponent>
   );
 };

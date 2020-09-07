@@ -29,7 +29,7 @@ const ViewPage = ({
           })}
         </Container>
       );
-    } else if (page === "videos" || page === "projects") {
+    } else if (page === "videos") {
       return (
         <Container>
           <Row>
@@ -39,7 +39,7 @@ const ViewPage = ({
           </Row>
         </Container>
       );
-    } else if (page === "gallery") {
+    } else if (page === "gallery" || page === "projects") {
       return (
         <Container fluid>
           <Row>
