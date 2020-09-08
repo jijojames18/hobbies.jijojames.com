@@ -57,15 +57,19 @@ const ViewPage = ({
   return (
     <ContainerComponent className={page + "-container"}>
       {getPageStructure()}
-      <Container>
-        <Row>
-          {items.length < total ? (
-            <LoadMoreButton loadMoreClicked={loadMoreClicked} />
-          ) : (
-            ""
-          )}
-        </Row>
-      </Container>
+      {page !== "projects" ? (
+        <Container>
+          <Row>
+            {items.length < total ? (
+              <LoadMoreButton loadMoreClicked={loadMoreClicked} />
+            ) : (
+              ""
+            )}
+          </Row>
+        </Container>
+      ) : (
+        ""
+      )}
     </ContainerComponent>
   );
 };
