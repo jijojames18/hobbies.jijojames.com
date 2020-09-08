@@ -16,6 +16,13 @@ export const ContainerComponent = styled.div`
 
 export const ProjectsComponent = styled.div``;
 
+export const ProjectsContainerComponent = styled(ContainerComponent)`
+  @media screen and (min-width: 600px) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+`;
+
 export const GalleryContainerComponent = styled.div`
   background-color: ${ContentColor};
   min-height: 100vh;

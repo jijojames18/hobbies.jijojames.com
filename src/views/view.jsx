@@ -39,9 +39,19 @@ const ViewPage = ({
           </Row>
         </Container>
       );
-    } else if (page === "gallery" || page === "projects") {
+    } else if (page === "gallery") {
       return (
         <Container fluid>
+          <Row>
+            {items.map((item) => {
+              return <RenderComponent key={item.id} item={item} />;
+            })}
+          </Row>
+        </Container>
+      );
+    } else if (page === "projects") {
+      return (
+        <Container fluid className="project-inner-container">
           <Row>
             {items.map((item) => {
               return <RenderComponent key={item.id} item={item} />;

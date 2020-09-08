@@ -1,7 +1,13 @@
 import styled from "styled-components";
+import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
+
+export const ContainerCol = styled(Col)`
+  margin-top: 24px;
+  margin-bottom: 24px;
+`;
 
 export const CardListGroup = styled(ListGroup)`
   justify-content: space-evenly;

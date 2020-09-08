@@ -13,8 +13,8 @@ import ProjectsRadioButton from "../../components/projects-radio-button/projects
 import Spinner from "../../components/spinner/spinner";
 import ViewPage from "../view";
 import {
+  ProjectsContainerComponent,
   ProjectsComponent,
-  ContainerComponent,
 } from "../../styles/common.styles";
 
 const ProjectsPage = ({ isLoading, projectsFetchStart, projects, total }) => {
@@ -27,7 +27,7 @@ const ProjectsPage = ({ isLoading, projectsFetchStart, projects, total }) => {
   return isLoading ? (
     <Spinner />
   ) : (
-    <ContainerComponent>
+    <ProjectsContainerComponent>
       <ProjectsRadioButton />
       <ViewPage
         RenderComponent={ProjectCardItem}
@@ -37,7 +37,7 @@ const ProjectsPage = ({ isLoading, projectsFetchStart, projects, total }) => {
         ContainerComponent={ProjectsComponent}
         page="projects"
       />
-    </ContainerComponent>
+    </ProjectsContainerComponent>
   );
 };
 

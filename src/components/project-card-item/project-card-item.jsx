@@ -1,8 +1,8 @@
 import React from "react";
-import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
 import {
+  ContainerCol,
   CardListGroup,
   CardListGroupItem,
   CardBodyMainContent,
@@ -32,7 +32,7 @@ const ProjectCardItem = ({
     "dark",
   ];
   return (
-    <Col sm={12} md={6} lg={4}>
+    <ContainerCol sm={12} md={6} lg={4}>
       <Card bg="secondary">
         <Card.Body>
           <Card.Img variant="top" src={image}></Card.Img>
@@ -58,7 +58,7 @@ const ProjectCardItem = ({
           </CardLink>
         </Card.Footer>
       </Card>
-    </Col>
+    </ContainerCol>
   );
 };
 
