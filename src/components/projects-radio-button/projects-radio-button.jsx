@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 import CustomButton from "../custom-button/custom-button";
+import { getProjectSelectedListOption } from "../../redux/projects/projects.selectors";
+import { changeSelectedProjectListOption } from "../../redux/projects/projects.actions";
 
 import "./projects-radio-button.scss";
 
-const ProjectsRadioButton = () => {
+const ProjectsRadioButton = ({
+  selectedOption,
+  changeSelectedProjectListOption,
+}) => {
   const buttons = ["All", "Front End", "Back End", "Libraries"];
-
-  const [clickedButton, setClickedButton] = useState(0);
 
   const onButtonClicked = (event) => {
     const clickedButton = Number(event.target.name.split("_")[1]);
-    setClickedButton(clickedButton);
+    changeSelectedProjectListOption({ option: clickedButton });
   };
 
   return (
@@ -29,7 +34,7 @@ const ProjectsRadioButton = () => {
             <CustomButton
               key={i}
               name={"button_" + i}
-              className={clickedButton === i ? "selected" : ""}
+              className={selectedOption === i ? "selected" : ""}
               onClick={onButtonClicked}
             >
               {buttonLabel}
@@ -41,4 +46,16 @@ const ProjectsRadioButton = () => {
   );
 };
 
-export default ProjectsRadioButton;
+const mapStateToProps = createStructuredSelector({
+  selectedOption: getProjectSelectedListOption,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeSelectedProjectListOption: (payload) =>
+    dispatch(changeSelectedProjectListOption(payload)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProjectsRadioButton);

@@ -16,3 +16,8 @@ export const selectProjectsIsLoading = createSelector(
   [selectProjects],
   (state) => state.isLoading
 );
+
+export const getProjectSelectedListOption = createSelector(
+  [selectProjects],
+  (state) => state.selectedListOption
+);

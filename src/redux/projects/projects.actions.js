@@ -16,3 +16,8 @@ export const projectsFetchFailure = (payload) => ({
   type: ProjectsTypes.PROJECTS_FETCH_FAILURE,
   payload,
 });
+
+export const changeSelectedProjectListOption = (payload) => ({
+  type: ProjectsTypes.CHANGE_SELECTED_PROJECT_LIST_OPTION,
+  payload,
+});

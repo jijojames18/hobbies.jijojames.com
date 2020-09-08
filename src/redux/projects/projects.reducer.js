@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   error: null,
   total: 0,
   isLoading: false,
+  selectedListOption: 0,
 };
 
 const projectsReducer = (state = INITIAL_STATE, action) => {
@@ -29,6 +30,11 @@ const projectsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: true,
+      };
+    case ProjectsTypes.CHANGE_SELECTED_PROJECT_LIST_OPTION:
+      return {
+        ...state,
+        selectedListOption: action.payload.option,
       };
     default:
       return state;
