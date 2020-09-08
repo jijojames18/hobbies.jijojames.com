@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 
 import {
   ContainerCol,
+  CardItem,
   CardListGroup,
   CardListGroupItem,
   CardBodyMainContent,
@@ -33,7 +34,7 @@ const ProjectCardItem = ({
   ];
   return (
     <ContainerCol sm={12} md={6} lg={4}>
-      <Card bg="secondary">
+      <CardItem>
         <Card.Body>
           <Card.Img variant="top" src={image}></Card.Img>
           <CardListGroup horizontal>
@@ -57,7 +58,7 @@ const ProjectCardItem = ({
             Github
           </CardLink>
         </Card.Footer>
-      </Card>
+      </CardItem>
     </ContainerCol>
   );
 };

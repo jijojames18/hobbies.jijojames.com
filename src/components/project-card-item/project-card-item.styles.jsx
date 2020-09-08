@@ -9,6 +9,11 @@ export const ContainerCol = styled(Col)`
   margin-bottom: 24px;
 `;
 
+export const CardItem = styled(Card)`
+  border-radius: 24px;
+  background-color: #4e4e4e;
+`;
+
 export const CardListGroup = styled(ListGroup)`
   justify-content: space-evenly;
   flex-wrap: wrap;
