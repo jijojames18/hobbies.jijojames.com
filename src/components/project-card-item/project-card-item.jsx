@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import FadeIn from "react-fade-in";
 
 import {
   ContainerCol,
@@ -34,31 +35,37 @@ const ProjectCardItem = ({
   ];
   return (
     <ContainerCol sm={12} md={6} lg={4}>
-      <CardItem>
-        <Card.Body>
-          <Card.Img variant="top" src={image}></Card.Img>
-          <CardListGroup horizontal>
-            {technology.map((item, i) => (
-              <CardListGroupItem variant={listVariants[i]} key={i}>
-                {item}
-              </CardListGroupItem>
-            ))}
-          </CardListGroup>
-        </Card.Body>
-        <CardBodyMainContent>
-          <CardBodyMainTitle>{title}</CardBodyMainTitle>
-          <CardBodyMainText>{desc}</CardBodyMainText>
-        </CardBodyMainContent>
+      <FadeIn delay={100} transitionDuration={750}>
+        <CardItem>
+          <Card.Body>
+            <Card.Img variant="top" src={image}></Card.Img>
+            <CardListGroup horizontal>
+              {technology.map((item, i) => (
+                <CardListGroupItem variant={listVariants[i]} key={i}>
+                  {item}
+                </CardListGroupItem>
+              ))}
+            </CardListGroup>
+          </Card.Body>
+          <CardBodyMainContent>
+            <CardBodyMainTitle>{title}</CardBodyMainTitle>
+            <CardBodyMainText>{desc}</CardBodyMainText>
+          </CardBodyMainContent>
 
-        <Card.Footer className="text-muted">
-          <CardLink href={siteLink} rel="noopener noreferrer" target="_blank">
-            Website
-          </CardLink>
-          <CardLink href={githubLink} rel="noopener noreferrer" target="_blank">
-            Github
-          </CardLink>
-        </Card.Footer>
-      </CardItem>
+          <Card.Footer className="text-muted">
+            <CardLink href={siteLink} rel="noopener noreferrer" target="_blank">
+              Website
+            </CardLink>
+            <CardLink
+              href={githubLink}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Github
+            </CardLink>
+          </Card.Footer>
+        </CardItem>
+      </FadeIn>
     </ContainerCol>
   );
 };
