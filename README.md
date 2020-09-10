@@ -37,6 +37,19 @@ id   | Number | Unique id value |
 place| String | Place at which the picture was taken |
 url  | String | Url of image hosted at a 3rd party website |
 
+`Collection` : `projects`  
+Document structure  
+Field | Type  | Description |
+------|-------|-------------|
+desc | String | Short description of the project |
+github_link | String | Github repository link |
+id   | Number | Unique id value |
+image | String | Url of the project image |
+site_link | String | Url of the project |
+tags | Array | Type of project |
+technology | Array | Technologies used |
+title  | String | Title of the project |
+
 At the time of development, firebase didn't have good way to obtain the total number of documents in a collection. So I had to create a new collection which holds the total for each of the collections.  
 
 `Collection` : `total`  
@@ -46,6 +59,7 @@ Field | Type  | Description |
 blog | Number | Total number of blog posts |
 gallery | Number | Total number of images |
 videos | Number | Total number of videos |
+projects | Number | Total number of projects |
 
 ## Environment Variables
 The service requires a number of config data to be present as environment variables.  
