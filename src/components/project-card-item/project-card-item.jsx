@@ -53,16 +53,28 @@ const ProjectCardItem = ({
           </CardBodyMainContent>
 
           <Card.Footer className="text-muted">
-            <CardLink href={siteLink} rel="noopener noreferrer" target="_blank">
-              Website
-            </CardLink>
-            <CardLink
-              href={githubLink}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Github
-            </CardLink>
+            {siteLink ? (
+              <CardLink
+                href={siteLink}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Website
+              </CardLink>
+            ) : (
+              ""
+            )}
+            {githubLink ? (
+              <CardLink
+                href={githubLink}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Github
+              </CardLink>
+            ) : (
+              ""
+            )}
           </Card.Footer>
         </CardItem>
       </FadeIn>
