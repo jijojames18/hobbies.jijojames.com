@@ -31,6 +31,9 @@ const OverlayMenu = ({ isMenuOpen }) => {
                 <Link href="/projects">Projects</Link>
               </Li>
               <Li>
+                <Link href="/gallery">Photography</Link>
+              </Li>
+              <Li>
                 <Link href="/blog">Blog</Link>
               </Li>
               <Li>
