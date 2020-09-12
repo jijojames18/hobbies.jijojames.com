@@ -12,7 +12,7 @@ export const ContainerCol = styled(Col)`
 export const CardItem = styled(Card)`
   background-color: #4e4e4e;
   &:hover {
-    .card-list-technology-group {
+    .list-group {
       opacity: 1;
     }
   }
@@ -25,6 +25,10 @@ export const CardListGroup = styled(ListGroup)`
   opacity: 0;
   justify-content: space-evenly;
   flex-wrap: wrap;
+`;
+
+export const CardBodyImg = styled(Card.Img)`
+  opacity: 0.5;
 `;
 
 export const CardListGroupItem = styled(ListGroupItem)`
