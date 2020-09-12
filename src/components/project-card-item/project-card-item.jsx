@@ -40,15 +40,13 @@ const ProjectCardItem = ({
         <CardItem>
           <CardBodyImageContainer>
             <Card.Img variant="top" src={image}></Card.Img>
-            <div>
-              <CardListGroup className="card-list-technology-group" horizontal>
-                {technology.map((item, i) => (
-                  <CardListGroupItem variant={listVariants[i]} key={i}>
-                    {item}
-                  </CardListGroupItem>
-                ))}
-              </CardListGroup>
-            </div>
+            <CardListGroup className="card-list-technology-group" horizontal>
+              {technology.map((item, i) => (
+                <CardListGroupItem variant={listVariants[i]} key={i}>
+                  {item}
+                </CardListGroupItem>
+              ))}
+            </CardListGroup>
           </CardBodyImageContainer>
           <CardBodyMainContent>
             <CardBodyMainTitle>{title}</CardBodyMainTitle>
