@@ -10,11 +10,19 @@ export const ContainerCol = styled(Col)`
 `;
 
 export const CardItem = styled(Card)`
-  border-radius: 24px;
   background-color: #4e4e4e;
+  &:hover {
+    .card-list-technology-group {
+      opacity: 1;
+    }
+  }
 `;
 
 export const CardListGroup = styled(ListGroup)`
+  position: absolute;
+  bottom: 20px;
+  width: 93%;
+  opacity: 0;
   justify-content: space-evenly;
   flex-wrap: wrap;
 `;
@@ -27,6 +35,10 @@ export const CardListGroupItem = styled(ListGroupItem)`
 export const CardBodyMainContent = styled(Card.Body)`
   margin-top: 0px;
   padding-top: 0px;
+`;
+
+export const CardBodyImageContainer = styled(Card.Body)`
+  position: relative;
 `;
 
 export const CardBodyMainTitle = styled(Card.Title)`

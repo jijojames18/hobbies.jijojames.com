@@ -7,6 +7,7 @@ import {
   CardItem,
   CardListGroup,
   CardListGroupItem,
+  CardBodyImageContainer,
   CardBodyMainContent,
   CardBodyMainTitle,
   CardBodyMainText,
@@ -37,16 +38,18 @@ const ProjectCardItem = ({
     <ContainerCol sm={12} md={6} lg={4}>
       <FadeIn delay={100} transitionDuration={750}>
         <CardItem>
-          <Card.Body>
+          <CardBodyImageContainer>
             <Card.Img variant="top" src={image}></Card.Img>
-            <CardListGroup horizontal>
-              {technology.map((item, i) => (
-                <CardListGroupItem variant={listVariants[i]} key={i}>
-                  {item}
-                </CardListGroupItem>
-              ))}
-            </CardListGroup>
-          </Card.Body>
+            <div>
+              <CardListGroup className="card-list-technology-group" horizontal>
+                {technology.map((item, i) => (
+                  <CardListGroupItem variant={listVariants[i]} key={i}>
+                    {item}
+                  </CardListGroupItem>
+                ))}
+              </CardListGroup>
+            </div>
+          </CardBodyImageContainer>
           <CardBodyMainContent>
             <CardBodyMainTitle>{title}</CardBodyMainTitle>
             <CardBodyMainText>{desc}</CardBodyMainText>
