@@ -23,7 +23,7 @@ export const CardListGroup = styled(ListGroup)`
   bottom: 20px;
   width: 93%;
   opacity: 0;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
 `;
 
@@ -34,6 +34,14 @@ export const CardBodyImg = styled(Card.Img)`
 export const CardListGroupItem = styled(ListGroupItem)`
   font-size: 14px;
   margin: 8px 0;
+  &:first-child {
+    border-bottom-left-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+  }
+  &:last-child {
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+  }
 `;
 
 export const CardBodyMainContent = styled(Card.Body)`
