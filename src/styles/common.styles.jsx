@@ -14,6 +14,10 @@ export const ContainerComponent = styled.div`
   min-height: 100vh;
 `;
 
+export const AboutContainerComponent = styled(ContainerComponent)`
+  padding-top: 80px;
+`;
+
 export const ProjectsComponent = styled.div``;
 
 export const ProjectsContainerComponent = styled(ContainerComponent)`
