@@ -6,81 +6,114 @@ import {
 
 import "react-vertical-timeline-component/style.min.css";
 
+import {
+  CareerContainer,
+  HeadingContainer,
+  ContentStyle,
+  SchoolIconStyle,
+  WorkIconStyle,
+  ArrowStyle,
+  TimelineHeading,
+  TimelineSubHeading,
+  TimelineContent,
+  TimelineContentStyle,
+} from "./carrer-timeline.styles";
+
 import { ReactComponent as WorkIcon } from "../../assets/work-icon.svg";
 import { ReactComponent as SchoolIcon } from "../../assets/school-icon.svg";
 
+const TimelineData = [
+  {
+    type: "work",
+    date: "May 2020 - Present",
+    title: "Financial.com",
+    subTitle: "Kochi",
+    content:
+      "Working as a Front End Developer, developing widgets for data visualization. " +
+      "These widgets are intendend to be stand alone and built using Vue, Vuex and Vue-Router along with a number of open source libraries" +
+      " such as Ag-Grid and Highcharts.",
+  },
+  {
+    type: "work",
+    date: "June 2019 - April 2020",
+    title: "Oracle",
+    subTitle: "Trivandrum",
+    content:
+      "Worked as a Senior Applications Developer in Oracle Field Service Cloud. " +
+      "Worked on adding new features both on the Front End as well as the Back End side. " +
+      "Used a number of technologies including and not limited to JavaScript, Java, Spring Boot " +
+      " MySQL, Redis, KafKa, Docker, Kubernetes e.t.c",
+  },
+  {
+    type: "work",
+    date: "June 2015 - June 2019",
+    title: "Oracle",
+    subTitle: "Trivandrum",
+    content:
+      "Initially worked as an Applications Developer in Oracle Field Service Cloud. " +
+      "Worked on adding new features both on the Front End as well as the Back End side. " +
+      "Used a number of technologies including and not limited to JavaScript, Java, Spring Boot " +
+      " MySQL, Redis, KafKa, Docker, Kubernetes e.t.c",
+  },
+  {
+    type: "education",
+    date: "2011 - 2015",
+    title: "Graduation",
+    subTitle: "Sree Chitra Thirunal College of Engineering",
+    content:
+      "Completed B.Tech in Computer Science and Engineering from Kerala University.",
+  },
+  {
+    type: "education",
+    date: "2009 - 2011",
+    title: "NSS Public School",
+    subTitle: "12th",
+    content:
+      "Completed 12th standard, with Major in Computer Science, after writing AISSCE examination conducted by CBSE.",
+  },
+  {
+    type: "education",
+    date: "2009",
+    title: "NSS Public School",
+    subTitle: "10th",
+    content:
+      "Completed 10th standard after writing AISSE examination conducted by CBSE.",
+  },
+];
+
 const CareerTimeline = () => {
   return (
-    <VerticalTimeline>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-        date="May 2020 - Present"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        icon={<WorkIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">Financial.com</h3>
-        <h4 className="vertical-timeline-element-subtitle">Kochi, Kerala</h4>
-        <p>Frontend developer</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-        date="June 2015 - April 2020"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-        icon={<WorkIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">Oracle Corporation</h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          Trivandrum, Kerala
-        </h4>
-        <p>Senior Applications Developer</p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        contentStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        contentArrowStyle={{ borderRight: "7px solid  rgb(233, 30, 99)" }}
-        date="2011 - 2015"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        icon={<SchoolIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          B. Tech in Computer Science and Engineering
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          Sree Chitra Thirunal College of Engineering
-        </h4>
-      </VerticalTimelineElement>
-      ,
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        contentStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        contentArrowStyle={{ borderRight: "7px solid  rgb(233, 30, 99)" }}
-        date="2009 -2011"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        icon={<SchoolIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">High School</h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          NSS Public School
-        </h4>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        contentStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        contentArrowStyle={{ borderRight: "7px solid  rgb(233, 30, 99)" }}
-        date="2011"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-        icon={<SchoolIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">High School</h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          NSS Public School
-        </h4>
-      </VerticalTimelineElement>
-    </VerticalTimeline>
+    <CareerContainer>
+      <HeadingContainer>My Experience</HeadingContainer>
+      <VerticalTimeline>
+        {TimelineData.map((item, i) => {
+          return (
+            <VerticalTimelineElement
+              className={
+                item.type === "work"
+                  ? "vertical-timeline-element--work"
+                  : "vertical-timeline-element--education"
+              }
+              contentStyle={ContentStyle}
+              contentArrowStyle={ArrowStyle}
+              date={item.date}
+              iconStyle={item.type === "work" ? WorkIconStyle : SchoolIconStyle}
+              icon={item.type === "work" ? <WorkIcon /> : <SchoolIcon />}
+            >
+              <TimelineHeading className="vertical-timeline-element-title">
+                {item.title}
+              </TimelineHeading>
+              <TimelineSubHeading className="vertical-timeline-element-subtitle">
+                {item.subTitle}
+              </TimelineSubHeading>
+              <TimelineContent style={TimelineContentStyle}>
+                {item.content}
+              </TimelineContent>
+            </VerticalTimelineElement>
+          );
+        })}
+      </VerticalTimeline>
+    </CareerContainer>
   );
 };
 

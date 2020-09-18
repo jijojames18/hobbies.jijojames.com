@@ -25,7 +25,7 @@ a {
   }
 }
 
-span, h1, h2, h3, p, button, input, textarea, label, input::placeholder, textarea::placeholder{
+span, h1, h2, h3, h6, p, button, input, textarea, label, input::placeholder, textarea::placeholder{
   color: ${FontColor};
   letter-spacing: 0.5px;
 }
