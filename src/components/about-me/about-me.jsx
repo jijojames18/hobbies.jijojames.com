@@ -1,34 +1,58 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 import {
   AboutMeContainer,
+  HeadingContainer,
   NameHeading,
   DesignationHeading,
-  MyImageContainer,
+  DetailsContainer,
   DetailsRow,
+  DetailsCol,
   ImageCol,
+  MyImageContainer,
+  AboutMeHeading,
+  AboutMeParagraph,
+  ContactButton,
 } from "./about-me.styles";
 
 const AboutMe = () => (
   <AboutMeContainer>
-    <Container>
-      <NameHeading>Jijo James K</NameHeading>
-      <DesignationHeading>Full Stack Developer</DesignationHeading>
-    </Container>
-    <Container>
+    <HeadingContainer>
+      <NameHeading>JIJO JAMES K</NameHeading>
+      <DesignationHeading>FULL STACK DEVELOPER</DesignationHeading>
+    </HeadingContainer>
+    <DetailsContainer>
       <DetailsRow>
         <ImageCol>
           <MyImageContainer />
         </ImageCol>
-        <Col>
-          Software engineer with 5+years of experience in designing,
-          implementing, testing, and delivering complex web applications using a
-          variety of programming languages and technologies.
-        </Col>
+        <DetailsCol>
+          <AboutMeHeading>About Me</AboutMeHeading>
+          <AboutMeParagraph>
+            Hi, <br /> <br />I am an engineer having 5+ years experience in
+            software development. During my period in the industry, I have had
+            sufficient experience in designing, implementing, testing, and
+            delivering complex web applications. I have worked on numerous
+            technologies, including and not limited to JavaScript, React, Vue,
+            Java. I consider myself to be a dedicated and dependable individual
+            who possesses excellent technical and communication skills.
+          </AboutMeParagraph>
+          <Row>
+            <ContactButton variant="primary" href="tel:+919567992316" size="lg">
+              Call Me
+            </ContactButton>
+            <ContactButton
+              variant="primary"
+              href="mailto:jijojames18@gmail.com"
+              size="lg"
+            >
+              Mail Me
+            </ContactButton>
+          </Row>
+        </DetailsCol>
       </DetailsRow>
-    </Container>
+    </DetailsContainer>
   </AboutMeContainer>
 );
 
