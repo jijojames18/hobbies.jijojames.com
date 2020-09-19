@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import ReactWordcloud from "react-wordcloud";
 
 import {
   MySkillsContainer,
   MySkillHeadingCol,
   MySkillHeading,
   WordCloudCol,
-  WordCloud,
   WordCloudColors,
 } from "./my-skills.styles";
 
@@ -49,7 +49,7 @@ const MySkills = () => {
         </Row>
         <Row>
           <WordCloudCol>
-            <WordCloud options={options} words={skills} />
+            <ReactWordcloud options={options} words={skills} />
           </WordCloudCol>
         </Row>
       </Container>

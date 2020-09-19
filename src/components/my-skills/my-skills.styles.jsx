@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Col from "react-bootstrap/Col";
-import ReactWordcloud from "react-wordcloud";
 
 import { BorderColor } from "../../styles/common.styles";
 
@@ -19,9 +18,6 @@ export const MySkillHeading = styled.h3``;
 export const WordCloudCol = styled(Col)`
   display: flex;
   justify-content: center;
-`;
-
-export const WordCloud = styled(ReactWordcloud)`
   border: 2px solid ${BorderColor};
 `;
 
