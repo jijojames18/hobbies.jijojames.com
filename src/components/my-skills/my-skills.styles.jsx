@@ -6,6 +6,7 @@ import { BorderColor } from "../../styles/common.styles";
 export const MySkillsContainer = styled.div`
   border-bottom: 1px solid ${BorderColor};
   padding-bottom: 72px;
+  font-family: "Roboto";
 `;
 
 export const MySkillHeadingCol = styled(Col)`
