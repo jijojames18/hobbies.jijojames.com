@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 
 import cameraImage from "../../assets/camera-icon.svg";
@@ -7,7 +8,7 @@ import readingImage from "../../assets/reading-icon.svg";
 import footballImage from "../../assets/football-icon.svg";
 import vlogImage from "../../assets/vlog-icon.svg";
 
-export const MyHobbiesContainer = styled.div`
+export const MyHobbiesContainer = styled(Container)`
   display: flex;
   justify-content: center;
   flex-direction: column;

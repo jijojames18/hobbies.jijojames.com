@@ -40,7 +40,7 @@ const Hobbies = [
 
 const MyHobbies = () => {
   return (
-    <MyHobbiesContainer>
+    <MyHobbiesContainer fluid>
       <Row>
         <MyHobbiesHeadingCol>
           <MyHobbiesHeading>My Hobbies</MyHobbiesHeading>

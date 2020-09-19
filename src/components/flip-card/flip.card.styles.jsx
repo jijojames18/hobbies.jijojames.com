@@ -44,6 +44,6 @@ export const FlipCardBack = styled(FlipCardFront)`
 
 export const FlipCardHeading = styled.h6`
   @media screen and (max-width: 600px) {
-    font-size: 48px;
+    font-size: 36px;
   }
 `;
