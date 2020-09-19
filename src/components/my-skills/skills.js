@@ -21,6 +21,11 @@ const skills = [
   "Prometheus",
   "Spinnaker",
   "Helm Charts",
+  "Shell scripts",
+  "Prometheus",
+  "Kibana",
+  "Grafana",
+  "Logstash",
 ];
 
 export default skills.map((skill, i) => ({

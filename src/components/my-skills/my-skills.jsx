@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import ReactWordcloud from "react-wordcloud";
 
 import {
   MySkillsContainer,
   MySkillHeadingCol,
   MySkillHeading,
+  WordCloudCol,
+  WordCloud,
+  WordCloudColors,
 } from "./my-skills.styles";
 
 import skills from "./skills";
 
 const options = {
+  colors: WordCloudColors,
   enableTooltip: false,
   deterministic: false,
   fontFamily: "Kanit",
   fontSizes: [14, 24],
   fontStyle: "normal",
   fontWeight: "normal",
-  padding: 1,
+  padding: 8,
   rotations: 3,
   rotationAngles: [0, 45],
   scale: "sqrt",
@@ -46,9 +48,9 @@ const MySkills = () => {
           </MySkillHeadingCol>
         </Row>
         <Row>
-          <Col>
-            <ReactWordcloud options={options} words={skills} />
-          </Col>
+          <WordCloudCol>
+            <WordCloud options={options} words={skills} />
+          </WordCloudCol>
         </Row>
       </Container>
     </MySkillsContainer>
