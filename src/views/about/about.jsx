@@ -11,6 +11,7 @@ const AboutPage = () => {
       <AboutMe />
       <CareerTimeline />
       <MySkills />
+      <MyHobbies />
     </AboutContainerComponent>
   );
 };
