@@ -37,5 +37,5 @@ export const TimelineSubHeading = styled.h6``;
 export const TimelineContent = styled.p``;
 
 export const TimelineContentStyle = {
-  "text-align": "left",
+  textAlign: "left",
 };

@@ -89,6 +89,7 @@ const CareerTimeline = () => {
         {TimelineData.map((item, i) => {
           return (
             <VerticalTimelineElement
+              key={i}
               className={
                 item.type === "work"
                   ? "vertical-timeline-element--work"
