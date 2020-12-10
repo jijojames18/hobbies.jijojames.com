@@ -33,15 +33,8 @@ export const CardBodyImg = styled(Card.Img)`
 
 export const CardListGroupItem = styled(ListGroupItem)`
   font-size: 14px;
-  margin: 8px 0;
-  &:first-child {
-    border-bottom-left-radius: 0px !important;
-    border-top-left-radius: 0px !important;
-  }
-  &:last-child {
-    border-bottom-right-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-  }
+  margin: 8px 2px;
+  border-radius: 10px !important;
 `;
 
 export const CardBodyMainContent = styled(Card.Body)`
