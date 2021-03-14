@@ -40,14 +40,14 @@ const AboutMe = () => (
           </AboutMeParagraph>
           <Row>
             <ContactButton variant="primary" href="tel:+919567992316" size="lg">
-              Call Me
+              Ring me
             </ContactButton>
             <ContactButton
               variant="primary"
               href="mailto:jijojames18@gmail.com"
               size="lg"
             >
-              Mail Me
+              Send a mail
             </ContactButton>
           </Row>
         </DetailsCol>
