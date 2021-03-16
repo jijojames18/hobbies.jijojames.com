@@ -28,7 +28,7 @@ export const CardListGroup = styled(ListGroup)`
 `;
 
 export const CardBodyImg = styled(Card.Img)`
-  opacity: 0.5;
+  opacity: 1;
 `;
 
 export const CardListGroupItem = styled(ListGroupItem)`
