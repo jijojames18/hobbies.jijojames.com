@@ -21,7 +21,7 @@ const Footer = () => (
       <Ul>
         <Li>
           <Link
-            href="https://www.facebook.com/jk.jijo"
+            href="https://www.facebook.com/pixeleefied"
             rel="noopener noreferrer"
             target="_blank"
           >
