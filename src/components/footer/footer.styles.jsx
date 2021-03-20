@@ -4,6 +4,7 @@ import twitterImage from "../../assets/icon-twitter.png";
 import instaImage from "../../assets/icon-instagram.png";
 import githubImage from "../../assets/icon-github.png";
 import linkedinImage from "../../assets/icon-linkedin.png";
+import youtubeImage from "../../assets/icon-youtube.png";
 
 const ImageSize = css`
   width: 20px;
@@ -53,6 +54,12 @@ export const InstagramImage = styled.div`
 
 export const GithubImage = styled.div`
   background-image: url(${githubImage});
+  ${ImageSize}
+`;
+
+export const YoutubeImage = styled.div`
+  background-image: url(${youtubeImage});
+  opacity: 0.6;
   ${ImageSize}
 `;
 

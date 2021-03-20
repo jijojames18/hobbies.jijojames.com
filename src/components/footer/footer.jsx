@@ -12,6 +12,7 @@ import {
   InstagramImage,
   GithubImage,
   LinkedinImage,
+  YoutubeImage,
   Copyright,
 } from "./footer.styles";
 
@@ -62,6 +63,15 @@ const Footer = () => (
             target="_blank"
           >
             <GithubImage alt="Github Page" />
+          </Link>
+        </Li>
+        <Li>
+          <Link
+            href="https://www.youtube.com/channel/UCio5ZAjlKr-ncg5owzIkn9Q"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <YoutubeImage alt="Youtube Channel" />
           </Link>
         </Li>
       </Ul>
