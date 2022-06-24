@@ -20,7 +20,7 @@ import {
   ProjectsComponent,
 } from "../../styles/common.styles";
 
-const ProjectsPage = ({ isLoading, projectsFetchStart, projects, total }) => {
+const ProjectsPage = ({ isLoading, projectsFetchStart, projects }) => {
   useEffect(() => {
     projectsFetchStart({
       from: 0,

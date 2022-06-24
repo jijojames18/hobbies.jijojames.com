@@ -24,7 +24,7 @@ function App() {
         <Suspense fallback={Spinner}>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/projects" component={AboutPage} />
+            <Route exact path="/about" component={AboutPage} />
             <Route exact path="/gallery" component={GalleryPage} />
             <Route exact path="/blog" component={BlogPage} />
             <Route component={PageNotFound} />
