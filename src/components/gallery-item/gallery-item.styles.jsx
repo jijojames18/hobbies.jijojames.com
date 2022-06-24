@@ -37,6 +37,10 @@ export const GalleryItemPlace = styled.h1`
   padding-left: 8px;
   transform: translateY(25px);
   transition: 0.5s ease-in-out;
+  word-break: break-all;
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 
 export const GalleryItemDate = styled.p`
@@ -47,6 +51,9 @@ export const GalleryItemDate = styled.p`
   transform: translateY(10px);
   transition: 0.5s ease-in-out;
   text-transform: uppercase;
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 
 export const GalleryItemImage = styled.img`
