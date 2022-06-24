@@ -8,10 +8,14 @@ export const SpinnerOverlay = styled.div`
   align-items: center;
 `;
 
+export const CenteredSpinner = styled.div`
+  margin: 20px auto;
+`;
+
 export const SpinnerContainer = styled.div`
-  display: inline-block;
-  width: 50px;
-  height: 50px;
+  display: block;
+  width: 100px;
+  height: 100px;
   border: 4px solid rgba(195, 195, 195, 0.6);
   border-radius: 50%;
   border-top-color: #636767;

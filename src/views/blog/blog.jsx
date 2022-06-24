@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+
 import { blogFetchStart } from "../../redux/blog/blog.actions";
 import {
   selectBlogIsLoading,
@@ -10,27 +13,39 @@ import {
 } from "../../redux/blog/blog.selectors";
 import BlogItem from "../../components/blog-item/blog-item";
 import Spinner from "../../components/spinner/spinner";
-import ViewPage from "../view";
 import { ContainerComponent } from "../../styles/common.styles";
+import InfiniteScroll from "../../components/infinite-scroll/infinite-scroll";
 
 const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
-  useEffect(() => {
+  const triggerFetch = () => {
     blogFetchStart({
-      from: 0,
+      from: posts.length,
     });
-  }, [blogFetchStart]);
+  };
 
-  return isLoading ? (
-    <Spinner />
-  ) : (
-    <ViewPage
-      RenderComponent={BlogItem}
-      fetchStart={blogFetchStart}
-      total={total}
-      items={posts}
-      ContainerComponent={ContainerComponent}
-      page="blog"
-    />
+  useEffect(() => {
+    triggerFetch();
+  }, []);
+
+  return (
+    <ContainerComponent className="blog-container">
+      <Container>
+        {posts.map((item, i) => {
+          return <BlogItem key={item.id} item={item} isEven={i % 2 === 0} />;
+        })}
+      </Container>
+      {isLoading ? (
+        <Container>
+          <Row>
+            <Spinner></Spinner>
+          </Row>
+        </Container>
+      ) : posts.length < total ? (
+        <InfiniteScroll triggerFetch={triggerFetch}></InfiniteScroll>
+      ) : (
+        ""
+      )}
+    </ContainerComponent>
   );
 };
 
