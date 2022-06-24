@@ -1,20 +1,64 @@
-import React from "react";
-import { AboutContainerComponent } from "../../styles/common.styles";
-import CareerTimeline from "../../components/career-timeline/career-timeline";
-import AboutMe from "../../components/about-me/about-me";
-//import MySkills from "../../components/my-skills/my-skills";
-//import MyHobbies from "../../components/my-hobbies/my-hobbies";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-const AboutPage = () => {
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+
+import { projectsFetchStart } from "../../redux/projects/projects.actions";
+import {
+  selectProjectsIsLoading,
+  selectProjectList,
+  selectProjectsTotal,
+} from "../../redux/projects/projects.selectors";
+import ProjectCardItem from "../../components/project-card-item/project-card-item";
+import ProjectsRadioButton from "../../components/projects-radio-button/projects-radio-button";
+import Spinner from "../../components/spinner/spinner";
+
+import {
+  ProjectsContainerComponent,
+  ProjectsComponent,
+} from "../../styles/common.styles";
+
+const ProjectsPage = ({ isLoading, projectsFetchStart, projects, total }) => {
+  useEffect(() => {
+    projectsFetchStart({
+      from: 0,
+    });
+  }, [projectsFetchStart]);
+
   return (
-    <AboutContainerComponent>
-      <AboutMe />
-      <CareerTimeline />{
-        //<MySkills />
-        //<MyHobbies />
-      }
-    </AboutContainerComponent>
+    <ProjectsContainerComponent>
+      <ProjectsRadioButton />
+      {isLoading ? (
+        <Container>
+          <Row>
+            <Spinner></Spinner>
+          </Row>
+        </Container>
+      ) : (
+        <ProjectsComponent className="projects-container">
+          <Container fluid>
+            <Row>
+              {projects.map((item) => {
+                return <ProjectCardItem key={item.id} item={item} />;
+              })}
+            </Row>
+          </Container>
+        </ProjectsComponent>
+      )}
+    </ProjectsContainerComponent>
   );
 };
 
-export default AboutPage;
+const mapStateToProps = createStructuredSelector({
+  isLoading: selectProjectsIsLoading,
+  projects: selectProjectList,
+  total: selectProjectsTotal,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  projectsFetchStart: (payload) => dispatch(projectsFetchStart(payload)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectsPage);
