@@ -21,37 +21,9 @@ const ViewPage = ({
   };
 
   const getPageStructure = () => {
-    if (page === "blog") {
-      return (
-        <Container>
-          {items.map((item) => {
-            return <RenderComponent key={item.id} item={item} />;
-          })}
-        </Container>
-      );
-    } else if (page === "videos") {
-      return (
-        <Container>
-          <Row>
-            {items.map((item) => {
-              return <RenderComponent key={item.id} item={item} />;
-            })}
-          </Row>
-        </Container>
-      );
-    } else if (page === "gallery" || page === "projects") {
+    if (page === "projects") {
       return (
         <Container fluid>
-          <Row>
-            {items.map((item) => {
-              return <RenderComponent key={item.id} item={item} />;
-            })}
-          </Row>
-        </Container>
-      );
-    } else if (page === "projects") {
-      return (
-        <Container fluid className="project-inner-container">
           <Row>
             {items.map((item) => {
               return <RenderComponent key={item.id} item={item} />;

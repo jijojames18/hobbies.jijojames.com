@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+
 import { galleryFetchStart } from "../../redux/gallery/gallery.actions";
 import {
   selectGalleryIsLoading,
@@ -9,28 +12,42 @@ import {
   selectGalleryTotal,
 } from "../../redux/gallery/gallery.selectors";
 import GalleryItem from "../../components/gallery-item/gallery-item";
+import InfiniteScroll from "../../components/infinite-scroll/infinite-scroll";
 import Spinner from "../../components/spinner/spinner";
-import ViewPage from "../view";
 import { GalleryContainerComponent } from "../../styles/common.styles";
 
 const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
-  useEffect(() => {
+  const triggerFetch = () => {
     galleryFetchStart({
-      from: 0,
+      from: gallery.length,
     });
-  }, [galleryFetchStart]);
+  };
 
-  return isLoading ? (
-    <Spinner />
-  ) : (
-    <ViewPage
-      RenderComponent={GalleryItem}
-      fetchStart={galleryFetchStart}
-      total={total}
-      items={gallery}
-      ContainerComponent={GalleryContainerComponent}
-      page="gallery"
-    />
+  useEffect(() => {
+    triggerFetch();
+  }, []);
+
+  return (
+    <GalleryContainerComponent className="gallery-container">
+      <Container fluid>
+        <Row>
+          {gallery.map((item) => {
+            return <GalleryItem key={item.id} item={item} />;
+          })}
+        </Row>
+      </Container>
+      {isLoading ? (
+        <Container>
+          <Row>
+            <Spinner></Spinner>
+          </Row>
+        </Container>
+      ) : gallery.length < total ? (
+        <InfiniteScroll triggerFetch={triggerFetch}></InfiniteScroll>
+      ) : (
+        ""
+      )}
+    </GalleryContainerComponent>
   );
 };
 
