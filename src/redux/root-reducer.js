@@ -3,7 +3,6 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import contactFormReducer from "./contact-form/contact-form.reducer";
-import videosReducer from "./videos/videos.reducer";
 import blogReducer from "./blog/blog.reducer";
 import galleryReducer from "./gallery/gallery.reducer";
 import projectsReducer from "./projects/projects.reducer";
@@ -16,7 +15,6 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   contactForm: contactFormReducer,
-  videos: videosReducer,
   blog: blogReducer,
   gallery: galleryReducer,
   projects: projectsReducer,

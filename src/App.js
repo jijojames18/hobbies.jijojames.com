@@ -5,7 +5,6 @@ import ErrorBoundary from "./components/error-boundary/error-boundary";
 import Spinner from "./components/spinner/spinner";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
-import VideosPage from "./views/videos/videos";
 import BlogPage from "./views/blog/blog";
 import GalleryPage from "./views/gallery/gallery";
 import ProjectsPage from "./views/projects/projects";
@@ -27,7 +26,6 @@ function App() {
             <Route exact path="/" component={AboutPage} />
             <Route exact path="/projects" component={ProjectsPage} />
             <Route exact path="/gallery" component={GalleryPage} />
-            <Route exact path="/videos" component={VideosPage} />
             <Route exact path="/blog" component={BlogPage} />
             <Route component={PageNotFound} />
           </Switch>
