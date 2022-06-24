@@ -21,8 +21,6 @@ export const GalleryItemThumb = styled.div`
   position: relative;
 `;
 
-export const GalleryItemHoverEffect = styled.div``;
-
 export const GalleryItemHoverContent = styled.div`
   position: absolute;
   text-align: left;
@@ -50,8 +48,6 @@ export const GalleryItemDate = styled.p`
   transition: 0.5s ease-in-out;
   text-transform: uppercase;
 `;
-
-export const GalleryItemImageContainer = styled.div``;
 
 export const GalleryItemImage = styled.img`
   width: 100%;

@@ -5,6 +5,8 @@ import { createStructuredSelector } from "reselect";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
+import Masonry from "../../components/masonry-grid/masonry-grid";
+
 import { galleryFetchStart } from "../../redux/gallery/gallery.actions";
 import {
   selectGalleryIsLoading,
@@ -31,9 +33,11 @@ const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
     <GalleryContainerComponent className="gallery-container">
       <Container fluid>
         <Row>
-          {gallery.map((item) => {
-            return <GalleryItem key={item.id} item={item} />;
-          })}
+          <Masonry
+            dataArray={gallery}
+            columnCount={3}
+            ChildsElement={GalleryItem}
+          ></Masonry>
         </Row>
       </Container>
       {isLoading ? (
