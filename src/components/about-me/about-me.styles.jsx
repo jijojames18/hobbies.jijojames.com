@@ -1,59 +1,57 @@
 import styled from "styled-components";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 import MyImage from "../../assets/my-image.png";
-import { BorderColor } from "../../styles/common.styles";
+// import MyImage from "../../assets/home-bg.jpg";
+
+// export const AboutMeContainer = styled.div`
+//   position: relative;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   height: 100%;
+//   width: 100%;
+//   color: #fff;
+//   text-align: center;
+//   background-image: url(${MyImage});
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center center;
+//   background-attachment: scroll;
+// `;
 
 export const AboutMeContainer = styled.div`
+  position: relative;
   min-height: 100vh;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  border-bottom: 1px solid ${BorderColor};
-}
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-image: url(${MyImage});
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 95% 50%;
+  background-attachment: scroll;
 `;
 
-export const HeadingContainer = styled(Container)`
-  padding-top: 8vh;
-  font-family: "Roboto";
-`;
-
-export const NameHeading = styled.h1`
-  font-size: 54px;
+export const NameHeading = styled.h2`
+  font-size: 34px;
+  text-transform: uppercase;
 `;
 
 export const DesignationHeading = styled.h3`
-  font-size: 34px;
+  font-size: 26px;
+  text-transform: uppercase;
 `;
 
 export const DetailsContainer = styled(Container)`
-  padding-top: 10vh;
-  @media screen and (max-width: 800px) {
-    padding-top: 0vh;
-    margin-bottom: 14px;
-  }
-`;
-
-export const DetailsRow = styled.div`
-  display: flex;
-  align-items: center;
-  @media screen and (max-width: 800px) {
-    flex-direction: column;
-  }
-`;
-
-export const DetailsCol = styled(Col)`
+  position: relative;
   text-align: left;
-  padding-left: 24px;
-  text-align: justify;
-`;
-
-export const ImageCol = styled.div`
-  display: flex;
-  justify-content: center;
 `;
 
 export const MyImageContainer = styled.div`
@@ -68,9 +66,9 @@ export const MyImageContainer = styled.div`
   }
 `;
 
-export const AboutMeHeading = styled.h3``;
-
-export const AboutMeParagraph = styled.p``;
+export const AboutMeParagraph = styled.p`
+  text-align: justify;
+`;
 
 export const ContactButton = styled(Button)`
   margin: 0px 8px;
