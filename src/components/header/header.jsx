@@ -27,7 +27,7 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <LogoContainer>
-          <LogoLink href="/">JIJO JAMES</LogoLink>
+          <LogoLink href="/"></LogoLink>
         </LogoContainer>
         <MenuIcon onClick={handleMenuClick} ref={menuIconRef}>
           <MenuIconSpan></MenuIconSpan>

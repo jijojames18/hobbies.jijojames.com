@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Logo from "../../assets/icon.png";
+
 export const HeaderContainer = styled.div``;
 
 export const Nav = styled.nav`
@@ -21,8 +23,12 @@ export const LogoContainer = styled.div`
 `;
 
 export const LogoLink = styled.a`
-  font-size: 28px;
-  letter-spacing: 0.5px;
+  background-image: url(${Logo});
+  height: 80px;
+  width: 152px;
+  display: block;
+  background-position: 100% 35%;
+}
 `;
 
 export const MenuIcon = styled.div`
