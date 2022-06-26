@@ -34,9 +34,21 @@ export const AboutMeContainer = styled.div`
   text-align: center;
   background-image: url(${MyImage});
   background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: 95% 50%;
   background-attachment: scroll;
+
+  @media screen and (max-width: 770px) {
+    background: none;
+  }
+
+  @media screen and (min-width: 770px) and (max-width: 980px) {
+    background-size: 50%;
+    background-position: 90% 50%;
+  }
+
+  @media screen and (min-width: 980px) {
+    background-size: 40%;
+    background-position: 95% 50%;
+  }
 `;
 
 export const NameHeading = styled.h2`
