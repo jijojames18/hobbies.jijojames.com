@@ -38,6 +38,9 @@ export const AboutMeContainer = styled.div`
 
   @media screen and (max-width: 770px) {
     background: none;
+    min-height: auto;
+    display: block;
+    padding-top: 80px;
   }
 
   @media screen and (min-width: 770px) and (max-width: 980px) {
