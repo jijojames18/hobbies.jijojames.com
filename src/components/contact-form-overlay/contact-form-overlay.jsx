@@ -1,11 +1,13 @@
 import React from "react";
+
+import ContactForm from "../contact-form/contact-form";
+
 import {
   Modal,
   ModalContent,
   CloseButton,
   CloseButtonImage,
 } from "./contact-form-overlay.styles";
-import ContactForm from "../contact-form/contact-form";
 
 const ContactFormOverlay = ({ isFormOpen, handleMenuClose }) => {
   return isFormOpen ? (

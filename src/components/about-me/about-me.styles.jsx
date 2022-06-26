@@ -66,18 +66,6 @@ export const DetailsContainer = styled(Container)`
   text-align: left;
 `;
 
-export const MyImageContainer = styled.div`
-  background-image: url(${MyImage});
-  width: 360px;
-  height: 360px;
-  background-size: contain;
-  @media screen and (max-width: 300px) {
-    width: 220px;
-    height: 220px;
-    margin-bottom: 8px;
-  }
-`;
-
 export const AboutMeParagraph = styled.p`
   text-align: justify;
 `;

@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+
+import OverlayMenu from "../overlay-menu/overlay-menu";
+
 import {
   HeaderContainer,
   Nav,
@@ -7,7 +10,6 @@ import {
   MenuIcon,
   MenuIconSpan,
 } from "./header.styles";
-import OverlayMenu from "../overlay-menu/overlay-menu";
 
 const Header = () => {
   const menuIconRef = React.createRef();

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { FontColor } from "../../styles/common.styles";
 
-export const MainHeading = styled.h4`
+export const MainHeading = styled.h3`
   color: ${FontColor};
 `;
 

@@ -2,20 +2,18 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-
-import Masonry from "../../components/masonry-grid/masonry-grid";
-
 import { galleryFetchStart } from "../../redux/gallery/gallery.actions";
 import {
   selectGalleryIsLoading,
   selectGalleryList,
   selectGalleryTotal,
 } from "../../redux/gallery/gallery.selectors";
+
 import GalleryItem from "../../components/gallery-item/gallery-item";
 import InfiniteScroll from "../../components/infinite-scroll/infinite-scroll";
 import Spinner from "../../components/spinner/spinner";
+import Masonry from "../../components/masonry-grid/masonry-grid";
+
 import { GalleryContainerComponent } from "../../styles/common.styles";
 
 const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
@@ -31,21 +29,13 @@ const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
 
   return (
     <GalleryContainerComponent className="gallery-container">
-      <Container fluid>
-        <Row>
-          <Masonry
-            dataArray={gallery}
-            columnCount={3}
-            ChildsElement={GalleryItem}
-          ></Masonry>
-        </Row>
-      </Container>
+      <Masonry
+        dataArray={gallery}
+        columnCount={3}
+        ChildsElement={GalleryItem}
+      ></Masonry>
       {isLoading ? (
-        <Container>
-          <Row>
-            <Spinner></Spinner>
-          </Row>
-        </Container>
+        <Spinner></Spinner>
       ) : gallery.length < total ? (
         <InfiniteScroll triggerFetch={triggerFetch}></InfiniteScroll>
       ) : (

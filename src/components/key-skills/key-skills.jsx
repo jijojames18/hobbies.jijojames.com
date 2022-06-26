@@ -1,5 +1,7 @@
 import React from "react";
+
 import { UL, LI } from "./key-skills.styles";
+
 import { MainHeading } from "../../styles/common.styles";
 
 const KeySkills = () => {

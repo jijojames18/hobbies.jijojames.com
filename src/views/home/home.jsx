@@ -1,12 +1,13 @@
 import React from "react";
-import { AboutContainerComponent } from "../../styles/common.styles";
+
+import { HomeContainerComponent } from "../../styles/common.styles";
 import AboutMe from "../../components/about-me/about-me";
 
 const AboutPage = () => {
   return (
-    <AboutContainerComponent>
+    <HomeContainerComponent>
       <AboutMe />
-    </AboutContainerComponent>
+    </HomeContainerComponent>
   );
 };
 

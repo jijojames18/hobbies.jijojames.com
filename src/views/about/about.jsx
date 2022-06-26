@@ -13,18 +13,19 @@ import {
 } from "../../redux/projects/projects.selectors";
 
 import KeySkills from "../../components/key-skills/key-skills";
-import { ProjectsContainerComponent } from "../../styles/common.styles";
 import Projects from "../../components/projects/projects";
+
+import { AboutContainerComponent } from "../../styles/common.styles";
 
 const ProjectsPage = ({ isLoading, projectsFetchStart, projects }) => {
   useEffect(() => {
     projectsFetchStart({
       from: 0,
     });
-  }, [projectsFetchStart]);
+  }, []);
 
   return (
-    <ProjectsContainerComponent>
+    <AboutContainerComponent>
       <Row>
         <Col lg={2} md={12} sm={12}>
           <KeySkills></KeySkills>
@@ -33,7 +34,7 @@ const ProjectsPage = ({ isLoading, projectsFetchStart, projects }) => {
           <Projects isLoading={isLoading} projects={projects} />
         </Col>
       </Row>
-    </ProjectsContainerComponent>
+    </AboutContainerComponent>
   );
 };
 

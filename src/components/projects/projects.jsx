@@ -23,11 +23,7 @@ const Projects = ({ isLoading, projects }) => {
       <ProjectsRadioButton />
 
       {isLoading ? (
-        <Container>
-          <Row>
-            <Spinner></Spinner>
-          </Row>
-        </Container>
+        <Spinner></Spinner>
       ) : (
         <ProjectsComponent className="projects-container">
           <Container fluid>

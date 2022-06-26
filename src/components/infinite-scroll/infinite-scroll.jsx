@@ -1,4 +1,5 @@
 import React from "react";
+
 import { ScrollEnd } from "./infinite-scroll.styles";
 
 class InfiniteScroll extends React.Component {

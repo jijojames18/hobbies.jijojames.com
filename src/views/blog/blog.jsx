@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 
 import { blogFetchStart } from "../../redux/blog/blog.actions";
 import {
@@ -11,10 +10,12 @@ import {
   selectBlogPosts,
   selectBlogTotal,
 } from "../../redux/blog/blog.selectors";
+
 import BlogItem from "../../components/blog-item/blog-item";
 import Spinner from "../../components/spinner/spinner";
-import { ContainerComponent } from "../../styles/common.styles";
 import InfiniteScroll from "../../components/infinite-scroll/infinite-scroll";
+
+import { ContainerComponent } from "../../styles/common.styles";
 
 const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
   const triggerFetch = () => {
@@ -31,15 +32,11 @@ const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
     <ContainerComponent className="blog-container">
       <Container>
         {posts.map((item, i) => {
-          return <BlogItem key={item.id} item={item} isEven={i % 2 === 0} />;
+          return <BlogItem key={item.id} item={item} isEven={false} />;
         })}
       </Container>
       {isLoading ? (
-        <Container>
-          <Row>
-            <Spinner></Spinner>
-          </Row>
-        </Container>
+        <Spinner></Spinner>
       ) : posts.length < total ? (
         <InfiniteScroll triggerFetch={triggerFetch}></InfiniteScroll>
       ) : (

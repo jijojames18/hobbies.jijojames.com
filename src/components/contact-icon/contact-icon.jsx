@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
+import ContactFormOverlay from "../contact-form-overlay/contact-form-overlay";
+
 import {
   ContactIconContainer,
   PopupIcon,
   PopupIconButton,
   ContactImage,
 } from "./contact-icon.styles";
-import ContactFormOverlay from "../contact-form-overlay/contact-form-overlay";
 
 const ContactIcon = () => {
   const [isFormOpen, setFormOpen] = useState(false);

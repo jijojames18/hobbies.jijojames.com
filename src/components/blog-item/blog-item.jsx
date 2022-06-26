@@ -1,8 +1,11 @@
 import React from "react";
+
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { BlogPost, BlogImage } from "./blog-item.styles";
+
 import BlogContent from "../blog-content/blog-content";
+
+import { BlogPost, BlogImage } from "./blog-item.styles";
 
 const BlogItem = ({ item: { date, title, desc, url, image }, isEven }) => {
   return (

@@ -16,11 +16,11 @@ export const ContainerComponent = styled.div`
   min-height: 100vh;
 `;
 
-export const AboutContainerComponent = styled(ContainerComponent)`
+export const HomeContainerComponent = styled(ContainerComponent)`
   padding-top: 80px;
 `;
 
-export const ProjectsContainerComponent = styled(ContainerComponent)`
+export const AboutContainerComponent = styled(ContainerComponent)`
   @media screen and (min-width: 600px) {
     padding-right: 60px;
     padding-left: 60px;
@@ -49,5 +49,3 @@ export const ButtonStyles = css`
 `;
 
 export const MainHeading = styled.h3``;
-
-export const SubHeading = styled.h4``;
