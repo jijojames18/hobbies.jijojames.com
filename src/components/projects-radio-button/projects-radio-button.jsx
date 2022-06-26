@@ -24,7 +24,7 @@ const ProjectsRadioButton = ({
 
   return (
     <Row>
-      <Col sm={12} md={6} lg={4}>
+      <Col sm={12} md={12} lg={12}>
         <ButtonGroup
           size="lg"
           className="mb-2"

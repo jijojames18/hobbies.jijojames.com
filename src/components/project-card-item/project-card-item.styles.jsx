@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 export const ContainerCol = styled(Col)`
@@ -11,6 +10,7 @@ export const ContainerCol = styled(Col)`
 
 export const CardItem = styled(Card)`
   background-color: #4e4e4e;
+  min-height: 240px;
   &:hover {
     .list-group {
       opacity: 1;
@@ -18,32 +18,21 @@ export const CardItem = styled(Card)`
   }
 `;
 
-export const CardListGroup = styled(ListGroup)`
-  position: absolute;
-  bottom: 20px;
-  width: 93%;
-  opacity: 0;
+export const CardListGroup = styled.div`
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
-`;
-
-export const CardBodyImg = styled(Card.Img)`
-  opacity: 1;
 `;
 
 export const CardListGroupItem = styled(ListGroupItem)`
   font-size: 14px;
   margin: 8px 2px;
-  border-radius: 10px !important;
+  border-radius: 6px !important;
 `;
 
 export const CardBodyMainContent = styled(Card.Body)`
-  margin-top: 0px;
+  margin-top: 14px;
   padding-top: 0px;
-`;
-
-export const CardBodyImageContainer = styled(Card.Body)`
-  position: relative;
 `;
 
 export const CardBodyMainTitle = styled(Card.Title)`
