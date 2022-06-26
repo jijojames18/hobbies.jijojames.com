@@ -20,8 +20,6 @@ export const AboutContainerComponent = styled(ContainerComponent)`
   padding-top: 80px;
 `;
 
-export const ProjectsComponent = styled.div``;
-
 export const ProjectsContainerComponent = styled(ContainerComponent)`
   @media screen and (min-width: 600px) {
     padding-right: 60px;
@@ -49,3 +47,7 @@ export const ButtonStyles = css`
     opacity: 0.5;
   }
 `;
+
+export const MainHeading = styled.h3``;
+
+export const SubHeading = styled.h4``;

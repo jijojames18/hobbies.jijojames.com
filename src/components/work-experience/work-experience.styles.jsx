@@ -2,24 +2,16 @@ import styled from "styled-components";
 
 import { FontColor } from "../../styles/common.styles";
 
-export const MainHeading = styled.h3``;
-
-export const SubHeading = styled.h4``;
-
-export const UL = styled.ul`
+export const MainHeading = styled.h4`
   color: ${FontColor};
-  padding: 10px;
-  @media screen and (max-width: 980px) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 `;
 
-export const LI = styled.li`
-  padding: 10px;
-  list-style-type: disc;
-  @media screen  and (max-width: 980px) {
-    display: inline;
-  }
-}
+export const SubHeading = styled.p`
+  color: ${FontColor};
+  margin-bottom: 0px;
+`;
+
+export const JobContainer = styled.div`
+  border-bottom: 1px solid #414141;
+  padding: 14px 0;
 `;

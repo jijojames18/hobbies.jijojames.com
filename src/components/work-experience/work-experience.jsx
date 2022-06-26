@@ -1,25 +1,31 @@
 import React from "react";
-import { MainHeading, UL, LI } from "./work-experience.styles";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import {
+  MainHeading,
+  SubHeading,
+  JobContainer,
+} from "./work-experience.styles";
 
 const WorkExperience = () => {
   return (
-    <React.Fragment>
-      <MainHeading>Key Skills</MainHeading>
-      <UL>
-        <LI> JavaScript </LI>
-        <LI> Vue</LI>
-        <LI> HTML 5</LI>
-        <LI> CSS 3</LI>
-        <LI> SASS</LI>
-        <LI> TypeScript</LI>
-        <LI> Webpack</LI>
-        <LI> Docker</LI>
-        <LI> Redis</LI>
-        <LI> Java (Basics)</LI>
-        <LI> MySQL</LI>
-        <LI> Kubernetes</LI>
-      </UL>
-    </React.Fragment>
+    <Row>
+      <Col lg={12} md={12} sm={12}>
+        <MainHeading>WORK EXPERIENCE</MainHeading>
+        <JobContainer>
+          <SubHeading>FULL STACK DEVELOPER</SubHeading>
+          <SubHeading>
+            Financial.com | Kochi, Kerala | May 2020-Present
+          </SubHeading>
+        </JobContainer>
+        <JobContainer>
+          <SubHeading>APPLICATIONS DEVELOPER</SubHeading>
+          <SubHeading>
+            Oracle | Trivandrum, Kerala | June 2015-April 2020
+          </SubHeading>
+        </JobContainer>
+      </Col>
+    </Row>
   );
 };
 
