@@ -27,7 +27,9 @@ export const LogoLink = styled.a`
   height: 80px;
   width: 152px;
   display: block;
-  background-position: 100% 35%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 65%;
 }
 `;
 
