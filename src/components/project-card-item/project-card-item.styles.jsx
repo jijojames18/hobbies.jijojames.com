@@ -28,6 +28,7 @@ export const CardListGroupItem = styled(ListGroupItem)`
   font-size: 14px;
   margin: 8px 2px;
   border-radius: 6px !important;
+  padding: 0.5rem;
 `;
 
 export const CardBodyMainContent = styled(Card.Body)`
