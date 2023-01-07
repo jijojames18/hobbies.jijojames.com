@@ -15,7 +15,7 @@ import {
 const FooterItems = () => (
   <SocialNav>
     <Ul>
-      <Li>
+      {/* <Li>
         <Link
           href="https://www.facebook.com/pixeleefied"
           rel="noopener noreferrer"
@@ -23,7 +23,7 @@ const FooterItems = () => (
         >
           <FacebookImage alt="Facebook Page" />
         </Link>
-      </Li>
+      </Li> */}
       <Li>
         <Link
           href="https://twitter.com/jijojames18"
@@ -33,7 +33,7 @@ const FooterItems = () => (
           <TwitterImage alt="Twitter Page" />
         </Link>
       </Li>
-      <Li>
+      {/* <Li>
         <Link
           href="https://www.instagram.com/pixeleefied"
           rel="noopener noreferrer"
@@ -41,7 +41,7 @@ const FooterItems = () => (
         >
           <InstagramImage alt="Instagram Page" />
         </Link>
-      </Li>
+      </Li> */}
       <Li>
         <Link
           href="https://www.linkedin.com/in/jijojames18"
@@ -60,7 +60,7 @@ const FooterItems = () => (
           <GithubImage alt="Github Page" />
         </Link>
       </Li>
-      <Li>
+      {/* <Li>
         <Link
           href="https://www.youtube.com/channel/UCio5ZAjlKr-ncg5owzIkn9Q"
           rel="noopener noreferrer"
@@ -68,7 +68,7 @@ const FooterItems = () => (
         >
           <YoutubeImage alt="Youtube Channel" />
         </Link>
-      </Li>
+      </Li> */}
     </Ul>
   </SocialNav>
 );
