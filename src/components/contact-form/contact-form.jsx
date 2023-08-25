@@ -145,7 +145,7 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
           </Row>
           <Row>
             <Col md={12} className="recaptcha-container">
-              <ReCAPTCHA sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} onChange={onCaptchaCheck} />
+              <ReCAPTCHA theme={'dark'} sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} onChange={onCaptchaCheck} />
             </Col>
           </Row>
           <Row>

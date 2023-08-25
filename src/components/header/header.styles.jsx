@@ -2,13 +2,8 @@ import styled from 'styled-components';
 
 import Logo from '../../assets/icon.png';
 
-import { ContentColor } from '../../styles/common.styles';
-
 export const HeaderContainer = styled.div`
-  background: ${ContentColor};
-  &.header-transparent {
-    background: rgba(250, 250, 250, 0.2);
-  }
+  background: rgba(250, 250, 250, 0.2);
 `;
 
 export const Nav = styled.nav`

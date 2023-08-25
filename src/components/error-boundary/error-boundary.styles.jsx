@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import img from '../../assets/error.png';
 
 export const ErrorImageOverlay = styled.div`
   height: 100vh;
@@ -8,15 +7,6 @@ export const ErrorImageOverlay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-
-export const ErrorImageContainer = styled.div`
-  display: inline-block;
-  background-image: url(${img});
-  background-size: cover;
-  background-position: center;
-  width: 40vh;
-  height: 40vh;
 `;
 
 export const ErrorImageText = styled.h2`
