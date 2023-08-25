@@ -3,13 +3,18 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import { SpinnerContainer, CenteredSpinner } from './spinner.styles';
+import { CenteredSpinner } from './spinner.styles';
+import ContentLoader from 'react-content-loader';
 
 const Spinner = () => (
   <Container>
     <Row>
       <CenteredSpinner>
-        <SpinnerContainer />
+        <ContentLoader viewBox="0 0 400 160" height={160} width={400} backgroundColor="transparent">
+          <circle cx="150" cy="100" r="30" />
+          <circle cx="250" cy="100" r="30" />
+          <circle cx="350" cy="100" r="30" />
+        </ContentLoader>
       </CenteredSpinner>
     </Row>
   </Container>
