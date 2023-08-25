@@ -5,4 +5,5 @@ export const NavigationArrowContainer = styled.div`
   margin: 20px;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 5s;
 `;
