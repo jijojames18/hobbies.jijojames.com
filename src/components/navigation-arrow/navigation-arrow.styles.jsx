@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { COMMON_HEIGHT as arrowDimension } from '../../styles/common.styles';
+import { commonHeight as arrowDimension } from '../../styles/common.styles';
 
 export const ArrowContainer = styled.div`
   height: ${arrowDimension};

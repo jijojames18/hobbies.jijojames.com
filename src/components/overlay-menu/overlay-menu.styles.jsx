@@ -47,7 +47,7 @@ export const MainMenu = styled.div`
 export const Ul = styled.ul``;
 
 export const Li = styled.li`
-  padding: 24px 0px;
+  padding: 1.5em 0px;
 `;
 
 export const Link = styled.a``;

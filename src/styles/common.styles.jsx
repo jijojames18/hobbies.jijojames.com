@@ -10,7 +10,9 @@ export const FontColor = '#fff';
 
 export const BorderColor = '#414141';
 
-export const COMMON_HEIGHT = '80px';
+export const commonHeight = '80px';
+
+export const transparent = 'rgba(250, 250, 250, 0.2)';
 
 export const ContainerComponent = styled.div`
   padding-top: ${ContainerPaddingTop};
@@ -19,7 +21,7 @@ export const ContainerComponent = styled.div`
 `;
 
 export const GalleryContainerComponent = styled.div`
-  padding-top: ${COMMON_HEIGHT};
+  padding-top: ${commonHeight};
   background-color: ${ContentColor};
   min-height: 100vh;
 `;

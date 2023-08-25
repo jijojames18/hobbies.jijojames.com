@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { FontColor, ContentColor } from './styles/common.styles';
+import { FontColor, ContentColor, transparent } from './styles/common.styles';
 
 export const GlobalStyle = createGlobalStyle`
 body {
@@ -21,7 +21,7 @@ a {
   transition: all 0.5s;
   &:hover {
     text-decoration: none;
-    color: rgba(250, 250, 250, 0.5);
+    color: ${transparent};
   }
 }
 
@@ -57,13 +57,8 @@ ul {
   }
 }
 
-.display-flex {
-  display: flex;
-}
-
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-
 `;

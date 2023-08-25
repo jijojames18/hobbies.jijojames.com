@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 
+import { transparent } from '../../styles/common.styles';
+
 const inputStyles = css`
   border-radius: 4px;
   padding-left: 1em;
   font-size: 1em;
   font-weight: 200;
-  background-color: rgba(250, 250, 250, 0.15);
+  background-color: ${transparent};
   outline: none;
   border: none;
   box-shadow: none;

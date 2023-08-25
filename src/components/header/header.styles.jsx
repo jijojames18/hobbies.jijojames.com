@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 import Logo from '../../assets/icon.png';
 
-import { COMMON_HEIGHT as headerHeight } from '../../styles/common.styles';
+import { commonHeight as headerHeight, transparent } from '../../styles/common.styles';
 
 export const HeaderContainer = styled.div`
-  background: rgba(250, 250, 250, 0.2);
+  background: ${transparent};
 `;
 
 export const Nav = styled.nav`

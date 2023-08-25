@@ -3,8 +3,9 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import { CenteredSpinner } from './spinner.styles';
 import ContentLoader from 'react-content-loader';
+
+import { CenteredSpinner } from './spinner.styles';
 
 const Spinner = () => (
   <Container>

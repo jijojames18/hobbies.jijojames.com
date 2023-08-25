@@ -1,6 +1,6 @@
 import BlogTypes from './blog.types';
 
-const BLOG_FETCH_LIMIT = 5;
+export const BLOG_FETCH_LIMIT = 5;
 
 export const blogFetchStart = (payload) => ({
   type: BlogTypes.BLOG_FETCH_START,

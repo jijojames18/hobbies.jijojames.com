@@ -3,7 +3,7 @@ import twitterImage from '../../assets/icon-twitter.png';
 import githubImage from '../../assets/icon-github.png';
 import linkedinImage from '../../assets/icon-linkedin.png';
 
-import { COMMON_HEIGHT as footerHeight } from '../../styles/common.styles';
+import { commonHeight as footerHeight } from '../../styles/common.styles';
 
 const ImageSize = css`
   width: 20px;

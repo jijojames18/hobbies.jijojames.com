@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-
 import Container from 'react-bootstrap/Container';
 
 import { blogFetchStart } from '../../redux/blog/blog.actions';

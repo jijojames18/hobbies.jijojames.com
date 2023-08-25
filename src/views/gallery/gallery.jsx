@@ -2,15 +2,15 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
+import Gallery from 'react-photo-gallery';
+import Lightbox from 'react-awesome-lightbox';
+
 import { galleryFetchStart, GALLERY_FETCH_LIMIT as galleryFetchLimit } from '../../redux/gallery/gallery.actions';
 import { selectGalleryIsLoading, selectGalleryList, selectGalleryTotal } from '../../redux/gallery/gallery.selectors';
 
 import Spinner from '../../components/spinner/spinner';
 import PageNavigation from '../../components/page-navigation/page-navigation';
 import { GalleryContainerComponent } from '../../styles/common.styles';
-
-import Gallery from 'react-photo-gallery';
-import Lightbox from 'react-awesome-lightbox';
 
 const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
   const [currentImage, setCurrentImage] = useState(0);

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
+import { BorderColor } from '../../styles/common.styles';
+
 export const BlogPost = styled.div`
-  border-bottom: 1px solid #414141;
+  border-bottom: 1px solid ${BorderColor};
   padding-bottom: 4.5em;
   margin-bottom: 4.5em;
   :last-child {

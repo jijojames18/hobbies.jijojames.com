@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import contactImage from '../../assets/contact-icon.png';
 
-import { COMMON_HEIGHT as iconDimension } from '../../styles/common.styles';
+import { commonHeight as iconDimension } from '../../styles/common.styles';
 
 export const ContactIconContainer = styled.div``;
 
