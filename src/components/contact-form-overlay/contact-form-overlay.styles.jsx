@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import closeContactImage from "../../assets/close-contact.png";
-import { OverlayBackgroundColor } from "../../styles/common.styles";
+import styled from 'styled-components';
+import closeContactImage from '../../assets/close-contact.png';
+import { OverlayBackgroundColor } from '../../styles/common.styles';
 
 export const Modal = styled.div`
   background-color: ${OverlayBackgroundColor};

@@ -1,4 +1,4 @@
-import BlogTypes from "./blog.types";
+import BlogTypes from './blog.types';
 
 const BLOG_FETCH_LIMIT = 5;
 

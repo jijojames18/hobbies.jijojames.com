@@ -1,5 +1,5 @@
-import { mergeItems } from "../redux.utils";
-import GalleryTypes from "./gallery.types";
+import { mergeItems } from '../redux.utils';
+import GalleryTypes from './gallery.types';
 
 const INITIAL_STATE = {
   gallery: [],

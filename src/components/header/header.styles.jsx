@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Logo from "../../assets/icon.png";
+import Logo from '../../assets/icon.png';
 
 export const HeaderContainer = styled.div``;
 
@@ -76,7 +76,7 @@ export const MenuIconSpan = styled.span`
     left: 15%;
     top: 50%;
     display: block;
-    content: "";
+    content: '';
     transition: all 0.5s ease-in-out;
   }
 

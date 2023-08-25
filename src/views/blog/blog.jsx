@@ -1,21 +1,17 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-import Container from "react-bootstrap/Container";
+import Container from 'react-bootstrap/Container';
 
-import { blogFetchStart } from "../../redux/blog/blog.actions";
-import {
-  selectBlogIsLoading,
-  selectBlogPosts,
-  selectBlogTotal,
-} from "../../redux/blog/blog.selectors";
+import { blogFetchStart } from '../../redux/blog/blog.actions';
+import { selectBlogIsLoading, selectBlogPosts, selectBlogTotal } from '../../redux/blog/blog.selectors';
 
-import BlogItem from "../../components/blog-item/blog-item";
-import Spinner from "../../components/spinner/spinner";
-import InfiniteScroll from "../../components/infinite-scroll/infinite-scroll";
+import BlogItem from '../../components/blog-item/blog-item';
+import Spinner from '../../components/spinner/spinner';
+import InfiniteScroll from '../../components/infinite-scroll/infinite-scroll';
 
-import { ContainerComponent } from "../../styles/common.styles";
+import { ContainerComponent } from '../../styles/common.styles';
 
 const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
   const triggerFetch = () => {
@@ -31,7 +27,7 @@ const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
   return (
     <ContainerComponent className="blog-container">
       <Container>
-        {posts.map((item, i) => {
+        {posts.map((item) => {
           return <BlogItem key={item.id} item={item} isEven={false} />;
         })}
       </Container>
@@ -40,7 +36,7 @@ const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
       ) : posts.length < total ? (
         <InfiniteScroll triggerFetch={triggerFetch}></InfiniteScroll>
       ) : (
-        ""
+        ''
       )}
     </ContainerComponent>
   );

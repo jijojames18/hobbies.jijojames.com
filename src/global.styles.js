@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import { FontColor, ContentColor } from "./styles/common.styles";
+import { FontColor, ContentColor } from './styles/common.styles';
 
 export const GlobalStyle = createGlobalStyle`
 body {

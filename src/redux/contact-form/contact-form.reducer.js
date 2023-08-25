@@ -1,4 +1,4 @@
-import ContactFormTypes from "./contact-form.types";
+import ContactFormTypes from './contact-form.types';
 
 const INITIAL_STATE = {
   contactForm: null,
@@ -19,17 +19,16 @@ const contactFormReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         contactForm: null,
-        alertMessage:
-          "Your message has been sent. We will get back to you as soon as possible.",
-        alertType: "info",
+        alertMessage: 'Your message has been sent. We will get back to you as soon as possible.',
+        alertType: 'info',
       };
     case ContactFormTypes.CONTACT_FORM_SUBMIT_FAILURE:
       return {
         ...state,
         contactForm: null,
         alertMessage:
-          "An internal error occurred. We are looking into this. In the mean time, please contact jijojames.com directly.",
-        alertType: "danger",
+          'An internal error occurred. We are looking into this. In the mean time, please contact jijojames.com directly.',
+        alertType: 'danger',
       };
     default:
       return state;

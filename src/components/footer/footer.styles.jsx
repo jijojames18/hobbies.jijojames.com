@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import twitterImage from "../../assets/icon-twitter.png";
-import githubImage from "../../assets/icon-github.png";
-import linkedinImage from "../../assets/icon-linkedin.png";
+import styled, { css } from 'styled-components';
+import twitterImage from '../../assets/icon-twitter.png';
+import githubImage from '../../assets/icon-github.png';
+import linkedinImage from '../../assets/icon-linkedin.png';
 
 const ImageSize = css`
   width: 20px;

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import img from "../../assets/error.png";
+import styled from 'styled-components';
+import img from '../../assets/error.png';
 
 export const ErrorImageOverlay = styled.div`
   height: 100vh;

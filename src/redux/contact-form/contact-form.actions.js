@@ -1,4 +1,4 @@
-import ContactFormTypes from "./contact-form.types";
+import ContactFormTypes from './contact-form.types';
 
 export const contactFormSubmitStart = (userForm) => ({
   type: ContactFormTypes.CONTACT_FORM_SUBMIT_START,

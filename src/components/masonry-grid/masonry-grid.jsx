@@ -1,10 +1,10 @@
 // Forked out of https://github.com/bakunya/react-masonry
-import React from "react";
+import React from 'react';
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
-import { MasonryContainer, MasonryColumn } from "./masonry-grid.styles";
+import { MasonryContainer, MasonryColumn } from './masonry-grid.styles';
 
 const divideArray = (array, length) => {
   const newArray = [...array];

@@ -1,25 +1,16 @@
-import { takeLatest, put, all, call } from "redux-saga/effects";
+import { takeLatest, put, all, call } from 'redux-saga/effects';
 
-import GalleryTypes from "./gallery.types";
-import { galleryFetchSuccess, galleryFetchFailure } from "./gallery.actions";
-import { fetchDocumentsFromStore } from "../../firebase/firebase.utils";
+import GalleryTypes from './gallery.types';
+import { galleryFetchSuccess, galleryFetchFailure } from './gallery.actions';
+import { fetchDocumentsFromStore } from '../../firebase/firebase.utils';
 
 export function* galleryFetchStart({ payload }) {
   try {
-    const data = yield call(
-      fetchDocumentsFromStore,
-      "gallery",
-      payload.from,
-      payload.limit
-    );
+    const data = yield call(fetchDocumentsFromStore, 'gallery', payload.from, payload.limit);
     yield put(galleryFetchSuccess(data));
   } catch (error) {
     console.log(error);
-    yield put(
-      galleryFetchFailure(
-        "An internal error occurred. We are looking into this."
-      )
-    );
+    yield put(galleryFetchFailure('An internal error occurred. We are looking into this.'));
   }
 }
 

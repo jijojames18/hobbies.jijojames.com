@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
-import { SpinnerContainer, CenteredSpinner } from "./spinner.styles";
+import { SpinnerContainer, CenteredSpinner } from './spinner.styles';
 
 const Spinner = () => (
   <Container>

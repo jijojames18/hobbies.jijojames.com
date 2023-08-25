@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { ScrollEnd } from "./infinite-scroll.styles";
+import { ScrollEnd } from './infinite-scroll.styles';
 
 class InfiniteScroll extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class InfiniteScroll extends React.Component {
   componentDidMount() {
     const options = {
       root: null,
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 1.0,
     };
     this.observer = new IntersectionObserver(this.handleObserver, options);

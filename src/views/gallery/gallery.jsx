@@ -1,20 +1,16 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-import { galleryFetchStart } from "../../redux/gallery/gallery.actions";
-import {
-  selectGalleryIsLoading,
-  selectGalleryList,
-  selectGalleryTotal,
-} from "../../redux/gallery/gallery.selectors";
+import { galleryFetchStart } from '../../redux/gallery/gallery.actions';
+import { selectGalleryIsLoading, selectGalleryList, selectGalleryTotal } from '../../redux/gallery/gallery.selectors';
 
-import GalleryItem from "../../components/gallery-item/gallery-item";
-import InfiniteScroll from "../../components/infinite-scroll/infinite-scroll";
-import Spinner from "../../components/spinner/spinner";
-import Masonry from "../../components/masonry-grid/masonry-grid";
+import GalleryItem from '../../components/gallery-item/gallery-item';
+import InfiniteScroll from '../../components/infinite-scroll/infinite-scroll';
+import Spinner from '../../components/spinner/spinner';
+import Masonry from '../../components/masonry-grid/masonry-grid';
 
-import { GalleryContainerComponent } from "../../styles/common.styles";
+import { GalleryContainerComponent } from '../../styles/common.styles';
 
 const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
   const triggerFetch = () => {
@@ -29,17 +25,13 @@ const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
 
   return (
     <GalleryContainerComponent className="gallery-container">
-      <Masonry
-        dataArray={gallery}
-        columnCount={3}
-        ChildsElement={GalleryItem}
-      ></Masonry>
+      <Masonry dataArray={gallery} columnCount={3} ChildsElement={GalleryItem}></Masonry>
       {isLoading ? (
         <Spinner></Spinner>
       ) : gallery.length < total ? (
         <InfiniteScroll triggerFetch={triggerFetch}></InfiniteScroll>
       ) : (
-        ""
+        ''
       )}
     </GalleryContainerComponent>
   );

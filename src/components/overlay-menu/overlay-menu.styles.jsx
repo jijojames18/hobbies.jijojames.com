@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { OverlayBackgroundColor } from "../../styles/common.styles";
+import styled from 'styled-components';
+import { OverlayBackgroundColor } from '../../styles/common.styles';
 
 export const OverlayMenuContainer = styled.section`
   position: fixed;

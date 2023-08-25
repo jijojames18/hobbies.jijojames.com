@@ -1,4 +1,4 @@
-import GalleryTypes from "./gallery.types";
+import GalleryTypes from './gallery.types';
 
 const GALLERY_FETCH_LIMIT = 18;
 

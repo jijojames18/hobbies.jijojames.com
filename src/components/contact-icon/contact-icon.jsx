@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import ContactFormOverlay from "../contact-form-overlay/contact-form-overlay";
+import ContactFormOverlay from '../contact-form-overlay/contact-form-overlay';
 
-import {
-  ContactIconContainer,
-  PopupIcon,
-  PopupIconButton,
-  ContactImage,
-} from "./contact-icon.styles";
+import { ContactIconContainer, PopupIcon, PopupIconButton, ContactImage } from './contact-icon.styles';
 
 const ContactIcon = () => {
   const [isFormOpen, setFormOpen] = useState(false);
@@ -27,10 +22,7 @@ const ContactIcon = () => {
           <ContactImage alt="Open contact form" />
         </PopupIconButton>
       </PopupIcon>
-      <ContactFormOverlay
-        isFormOpen={isFormOpen}
-        handleMenuClose={handleMenuClose}
-      />
+      <ContactFormOverlay isFormOpen={isFormOpen} handleMenuClose={handleMenuClose} />
     </ContactIconContainer>
   );
 };

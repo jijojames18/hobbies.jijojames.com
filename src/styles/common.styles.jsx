@@ -1,14 +1,14 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-export const ContainerPaddingTop = "100px";
+export const ContainerPaddingTop = '100px';
 
-export const ContentColor = "#232323";
+export const ContentColor = '#232323';
 
-export const OverlayBackgroundColor = "#0d0d0d";
+export const OverlayBackgroundColor = '#0d0d0d';
 
-export const FontColor = "#fff";
+export const FontColor = '#fff';
 
-export const BorderColor = "#414141";
+export const BorderColor = '#414141';
 
 export const ContainerComponent = styled.div`
   padding-top: ${ContainerPaddingTop};

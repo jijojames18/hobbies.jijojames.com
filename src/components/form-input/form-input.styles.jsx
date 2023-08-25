@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const inputStyles = css`
   border-radius: 4px;
@@ -34,8 +34,8 @@ export const FormInputTextAreaContainer = styled.textarea`
   max-width: 100%;
 `;
 
-FormInputContainer.displayName = "FormInputContainer";
+FormInputContainer.displayName = 'FormInputContainer';
 
 export const FormInputLabel = styled.label``;
 
-FormInputLabel.displayName = "FormInputLabel";
+FormInputLabel.displayName = 'FormInputLabel';

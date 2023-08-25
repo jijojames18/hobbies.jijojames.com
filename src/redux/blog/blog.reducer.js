@@ -1,5 +1,5 @@
-import { mergeItems } from "../redux.utils";
-import BlogTypes from "./blog.types";
+import { mergeItems } from '../redux.utils';
+import BlogTypes from './blog.types';
 
 const INITIAL_STATE = {
   posts: [],

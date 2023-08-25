@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import OverlayMenu from "../overlay-menu/overlay-menu";
+import OverlayMenu from '../overlay-menu/overlay-menu';
 
-import {
-  HeaderContainer,
-  Nav,
-  LogoContainer,
-  LogoLink,
-  MenuIcon,
-  MenuIconSpan,
-} from "./header.styles";
+import { HeaderContainer, Nav, LogoContainer, LogoLink, MenuIcon, MenuIconSpan } from './header.styles';
 
 const Header = () => {
   const menuIconRef = React.createRef();
@@ -17,9 +10,7 @@ const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
-    isMenuOpen
-      ? menuIconRef.current.classList.remove("active")
-      : menuIconRef.current.classList.add("active");
+    isMenuOpen ? menuIconRef.current.classList.remove('active') : menuIconRef.current.classList.add('active');
     setMenuOpen(!isMenuOpen);
   };
 

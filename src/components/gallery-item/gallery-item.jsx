@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   GalleryItemContainer,
@@ -8,7 +8,7 @@ import {
   GalleryItemPlace,
   GalleryItemDate,
   GalleryItemImage,
-} from "./gallery-item.styles";
+} from './gallery-item.styles';
 
 const GalleryItem = ({ item: { place, date, url } }) => {
   return (

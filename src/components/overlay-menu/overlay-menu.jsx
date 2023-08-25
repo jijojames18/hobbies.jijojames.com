@@ -1,23 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
-import {
-  OverlayMenuContainer,
-  MainMenu,
-  Ul,
-  Li,
-  Link,
-} from "./overlay-menu.styles";
+import { OverlayMenuContainer, MainMenu, Ul, Li, Link } from './overlay-menu.styles';
 
 const OverlayMenu = ({ isMenuOpen }) => {
   const menuContainerRef = React.createRef();
 
   useEffect(() => {
-    isMenuOpen
-      ? menuContainerRef.current.classList.add("open")
-      : menuContainerRef.current.classList.remove("open");
+    isMenuOpen ? menuContainerRef.current.classList.add('open') : menuContainerRef.current.classList.remove('open');
   }, [isMenuOpen, menuContainerRef]);
 
   return (

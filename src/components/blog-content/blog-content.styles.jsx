@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { ButtonStyles } from "../../styles/common.styles";
+import styled from 'styled-components';
+import { ButtonStyles } from '../../styles/common.styles';
 
 export const TextContent = styled.div`
   text-align: justify;
