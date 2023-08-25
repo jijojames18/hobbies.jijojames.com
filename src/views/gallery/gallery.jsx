@@ -2,24 +2,30 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { galleryFetchStart } from '../../redux/gallery/gallery.actions';
+import { galleryFetchStart, GALLERY_FETCH_LIMIT as galleryFetchLimit } from '../../redux/gallery/gallery.actions';
 import { selectGalleryIsLoading, selectGalleryList, selectGalleryTotal } from '../../redux/gallery/gallery.selectors';
 
 import Spinner from '../../components/spinner/spinner';
-
+import PageNavigation from '../../components/page-navigation/page-navigation';
 import { GalleryContainerComponent } from '../../styles/common.styles';
+
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-awesome-lightbox';
 
-const GalleryPage = ({ isLoading, galleryFetchStart, gallery }) => {
+const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  const [fetchIndex, setFetchIndex] = useState(0);
+
   const triggerFetch = () => {
     galleryFetchStart({
-      from: gallery.length,
+      from: fetchIndex,
     });
   };
 
-  const [currentImage, setCurrentImage] = useState(0);
-  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  const onArrowClicked = ({ from }) => {
+    setFetchIndex(from);
+  };
 
   const openLightbox = useCallback((event, { index }) => {
     setCurrentImage(index);
@@ -31,15 +37,29 @@ const GalleryPage = ({ isLoading, galleryFetchStart, gallery }) => {
     setViewerIsOpen(false);
   };
 
-  const photos = gallery.map((image) => ({ ...image, src: image.url, title: image.place, width: 360, height: 240 }));
+  const photos = gallery
+    .filter((image, imageIndex) => imageIndex >= fetchIndex && imageIndex < fetchIndex + galleryFetchLimit)
+    .map((image) => ({ ...image, src: image.url, title: image.place, width: 360, height: 240 }));
 
   useEffect(() => {
     triggerFetch();
-  }, []);
+  }, [fetchIndex]);
 
   return (
     <GalleryContainerComponent className="gallery-container">
-      {isLoading ? <Spinner></Spinner> : <Gallery photos={photos} onClick={openLightbox}></Gallery>}
+      {isLoading ? (
+        <Spinner></Spinner>
+      ) : (
+        <React.Fragment>
+          <Gallery photos={photos} onClick={openLightbox}></Gallery>
+          <PageNavigation
+            from={fetchIndex}
+            total={total}
+            count={galleryFetchLimit}
+            arrowClicked={onArrowClicked}
+          ></PageNavigation>
+        </React.Fragment>
+      )}
       {viewerIsOpen ? (
         <Lightbox
           images={photos}

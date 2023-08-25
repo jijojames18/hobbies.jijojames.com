@@ -1,6 +1,6 @@
 import GalleryTypes from './gallery.types';
 
-const GALLERY_FETCH_LIMIT = 15;
+export const GALLERY_FETCH_LIMIT = 15;
 
 export const galleryFetchStart = (payload) => ({
   type: GalleryTypes.GALLERY_FETCH_START,
