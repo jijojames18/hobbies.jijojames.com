@@ -27,7 +27,7 @@ const contactFormReducer = (state = INITIAL_STATE, action) => {
         ...state,
         contactForm: null,
         alertMessage:
-          'An internal error occurred. We are looking into this. In the mean time, please contact jijojames.com directly.',
+          'An internal error occurred. We are looking into this. In the mean time, please contact hobbies.jijojames.com directly.',
         alertType: 'danger',
       };
     default:

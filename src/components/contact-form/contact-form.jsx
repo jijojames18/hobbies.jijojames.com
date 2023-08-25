@@ -1,32 +1,31 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import ReCAPTCHA from "react-google-recaptcha";
-import Alert from "react-bootstrap/Alert";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import ReCAPTCHA from 'react-google-recaptcha';
+import Alert from 'react-bootstrap/Alert';
 
-import FormInput from "../form-input/form-input";
-import CustomButton from "../custom-button/custom-button";
+import FormInput from '../form-input/form-input';
+import CustomButton from '../custom-button/custom-button';
 
-import { ModalBody, HelloHeading } from "./contact-form.styles";
+import { ModalBody, HelloHeading } from './contact-form.styles';
 
-import { contactFormSubmitStart } from "../../redux/contact-form/contact-form.actions";
+import { contactFormSubmitStart } from '../../redux/contact-form/contact-form.actions';
 
 const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
-  const captchaAlertMessage =
-    "Please prove you are a human. Check the captcha button";
+  const captchaAlertMessage = 'Please prove you are a human. Check the captcha button';
 
-  const [captcha, setCaptcha] = useState("");
+  const [captcha, setCaptcha] = useState('');
   const [alert, setAlert] = useState({
     visible: false,
-    type: "warning",
+    type: 'warning',
     message: captchaAlertMessage,
   });
   const [userDetails, setUserDetails] = useState({
-    name: "",
-    email: "",
-    comments: "",
+    name: '',
+    email: '',
+    comments: '',
   });
 
   const { name, email, comments } = userDetails;
@@ -34,9 +33,9 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
   useEffect(() => {
     if (formAlert.alertType !== null) {
       setUserDetails({
-        name: "",
-        email: "",
-        comments: "",
+        name: '',
+        email: '',
+        comments: '',
       });
 
       setAlert({
@@ -63,13 +62,13 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
         ...alert,
         visible: true,
         message: captchaAlertMessage,
-        variant: "warning",
+        variant: 'warning',
       });
     } else {
       contactFormSubmitStart({
         formData: { ...userDetails },
         captcha,
-        site: "jijojames.com",
+        site: 'jijojames.com',
       });
     }
     event.preventDefault();
@@ -91,7 +90,7 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
                 <Alert
                   variant={alert.variant}
                   show={alert.visible}
-                  dismissible={alert.variant === "info"}
+                  dismissible={alert.variant === 'info'}
                   onClose={() => setAlert({ ...alert, visible: false })}
                 >
                   {alert.message}
@@ -99,7 +98,7 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
               </Col>
             </Row>
           ) : (
-            ""
+            ''
           )}
           <Row>
             <Col md={12}>
@@ -146,10 +145,7 @@ const ContactForm = ({ formAlert, contactFormSubmitStart }) => {
           </Row>
           <Row>
             <Col md={12} className="recaptcha-container">
-              <ReCAPTCHA
-                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-                onChange={onCaptchaCheck}
-              />
+              <ReCAPTCHA sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} onChange={onCaptchaCheck} />
             </Col>
           </Row>
           <Row>
@@ -172,8 +168,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  contactFormSubmitStart: (formDetails) =>
-    dispatch(contactFormSubmitStart(formDetails)),
+  contactFormSubmitStart: (formDetails) => dispatch(contactFormSubmitStart(formDetails)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
