@@ -19,7 +19,7 @@ const Footer = (history) => {
         <Container fluid>
           <Row>
             <Col md={12}>
-              <Copyright>Copyright &copy; {new Date().getFullYear()} hobbies.jijojames.com</Copyright>
+              <Copyright>Copyright &copy; {new Date().getFullYear()} jijojames.com</Copyright>
             </Col>
           </Row>
         </Container>

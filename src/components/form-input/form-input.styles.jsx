@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 const inputStyles = css`
   border-radius: 4px;
-  padding-left: 14px;
-  font-size: 14px;
+  padding-left: 1em;
+  font-size: 1em;
   font-weight: 200;
   background-color: rgba(250, 250, 250, 0.15);
   outline: none;
@@ -20,7 +20,7 @@ const inputStyles = css`
 
 export const GroupContainer = styled.div`
   position: relative;
-  margin: 14px 0;
+  margin: 1em 0;
 `;
 
 export const FormInputContainer = styled.input`

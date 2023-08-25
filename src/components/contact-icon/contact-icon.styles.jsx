@@ -1,12 +1,14 @@
-import styled from "styled-components";
-import contactImage from "../../assets/contact-icon.png";
+import styled from 'styled-components';
+import contactImage from '../../assets/contact-icon.png';
+
+import { COMMON_HEIGHT as iconDimension } from '../../styles/common.styles';
 
 export const ContactIconContainer = styled.div``;
 
 export const PopupIcon = styled.div`
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: calc(${iconDimension} / 2);
+  right: calc(${iconDimension} / 2);
   z-index: 300;
   display: inline-block;
 `;

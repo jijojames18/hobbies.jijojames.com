@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 import Logo from '../../assets/icon.png';
 
+import { COMMON_HEIGHT as headerHeight } from '../../styles/common.styles';
+
 export const HeaderContainer = styled.div`
   background: rgba(250, 250, 250, 0.2);
 `;
 
 export const Nav = styled.nav`
-  height: 80px;
+  height: ${headerHeight};
   position: fixed;
   width: 100%;
   left: 0;
@@ -20,13 +22,13 @@ export const Nav = styled.nav`
 `;
 
 export const LogoContainer = styled.div`
-  margin-left: 32px;
+  margin-left: 2.25em;
 `;
 
 export const LogoLink = styled.a`
   background-image: url(${Logo});
-  height: 80px;
-  width: 152px;
+  height: ${headerHeight};
+  width: 150px;
   display: block;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -39,7 +41,7 @@ export const MenuIcon = styled.div`
   border: 1px solid #fff;
   width: 50px;
   height: 50px;
-  margin-right: 32px;
+  margin-right: 2.25em;
   position: relative;
   cursor: pointer;
   transition: background 0.5s;

@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  font-size: 24px;
+  font-size: 1.75em;
   font-weight: 300;
   color: ${FontColor};
   text-decoration: none;
@@ -42,7 +42,7 @@ ul {
 .recaptcha-container {
   display: flex;
   justify-content: center;
-  margin: 14px 0;
+  margin: 1em 0;
 }
 
 .gallery-container {

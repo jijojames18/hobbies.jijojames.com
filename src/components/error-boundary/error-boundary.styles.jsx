@@ -10,6 +10,6 @@ export const ErrorImageOverlay = styled.div`
 `;
 
 export const ErrorImageText = styled.h2`
-  font-size: 28px;
+  font-size: 2em;
   color: #2f8e89;
 `;

@@ -22,6 +22,7 @@ const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
 
   useEffect(() => {
     triggerFetch();
+    // eslint-disable-next-line
   }, []);
 
   return (

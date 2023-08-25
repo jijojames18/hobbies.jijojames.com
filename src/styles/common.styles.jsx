@@ -10,6 +10,8 @@ export const FontColor = '#fff';
 
 export const BorderColor = '#414141';
 
+export const COMMON_HEIGHT = '80px';
+
 export const ContainerComponent = styled.div`
   padding-top: ${ContainerPaddingTop};
   background-color: ${ContentColor};
@@ -17,14 +19,14 @@ export const ContainerComponent = styled.div`
 `;
 
 export const GalleryContainerComponent = styled.div`
-  padding-top: 80px;
+  padding-top: ${COMMON_HEIGHT};
   background-color: ${ContentColor};
   min-height: 100vh;
 `;
 
 export const ButtonStyles = css`
   border-radius: 0px;
-  font-size: 14px;
+  font-size: 1em;
   text-transform: uppercase;
   font-weight: 600;
   background-color: transparent;

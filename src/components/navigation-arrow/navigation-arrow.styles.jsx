@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
+import { COMMON_HEIGHT as arrowDimension } from '../../styles/common.styles';
+
 export const ArrowContainer = styled.div`
-  height: 70px;
-  width: 70px;
+  height: ${arrowDimension};
+  width: ${arrowDimension};
   border-radius: 50%;
   cursor: pointer;
   pointer-events: all;
@@ -15,5 +17,5 @@ export const ArrowItem = styled.span`
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 36px;
+  font-size: 2.5em;
 `;

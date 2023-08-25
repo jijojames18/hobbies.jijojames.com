@@ -43,6 +43,7 @@ const GalleryPage = ({ isLoading, galleryFetchStart, gallery, total }) => {
 
   useEffect(() => {
     triggerFetch();
+    // eslint-disable-next-line
   }, [fetchIndex]);
 
   return (
