@@ -12,6 +12,7 @@ import PageNotFound from './components/page-not-found/page-not-found';
 
 import { GlobalStyle } from './global.styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-awesome-lightbox/build/style.css';
 
 function App() {
   return (
