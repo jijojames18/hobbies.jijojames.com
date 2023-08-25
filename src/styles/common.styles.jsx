@@ -16,10 +16,6 @@ export const ContainerComponent = styled.div`
   min-height: 100vh;
 `;
 
-export const HomeContainerComponent = styled(ContainerComponent)`
-  padding-top: 80px;
-`;
-
 export const AboutContainerComponent = styled(ContainerComponent)`
   @media screen and (min-width: 600px) {
     padding-right: 60px;

@@ -1,10 +1,7 @@
 import styled, { css } from "styled-components";
-import fbImage from "../../assets/icon-facebook.png";
 import twitterImage from "../../assets/icon-twitter.png";
-import instaImage from "../../assets/icon-instagram.png";
 import githubImage from "../../assets/icon-github.png";
 import linkedinImage from "../../assets/icon-linkedin.png";
-import youtubeImage from "../../assets/icon-youtube.png";
 
 const ImageSize = css`
   width: 20px;
@@ -37,29 +34,13 @@ export const Li = styled.li`
 
 export const Link = styled.a``;
 
-export const FacebookImage = styled.div`
-  background-image: url(${fbImage});
-  ${ImageSize}
-`;
-
 export const TwitterImage = styled.div`
   background-image: url(${twitterImage});
   ${ImageSize}
 `;
 
-export const InstagramImage = styled.div`
-  background-image: url(${instaImage});
-  ${ImageSize}
-`;
-
 export const GithubImage = styled.div`
   background-image: url(${githubImage});
-  ${ImageSize}
-`;
-
-export const YoutubeImage = styled.div`
-  background-image: url(${youtubeImage});
-  opacity: 0.6;
   ${ImageSize}
 `;
 

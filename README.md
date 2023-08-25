@@ -1,75 +1,56 @@
-## jijojames.com. 
-Portfolio website built using React and Bootstrap React.  
-The website is hosted at [jijojames.com](https://jijojames.com).  
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The data is stored in Google Firestore and is fetched using the JavaScript Admin SDK for Firebase. The app uses Redux to store the data, Redux-saga for handling side-effects and React router for navigation.  
+## jijojames.com.
+
+Hobby website built using React and Bootstrap React.  
+The website is hosted at [hobbies.jijojames.com](https://hobbies.jijojames.com).  
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The data is stored in Google Firestore and is fetched using the JavaScript Admin SDK for Firebase. The app uses Redux to store the data, Redux-saga for handling side-effects and React router for navigation.
 
 ### Styling
-Styling is done using `styled-components`.  
+
+Styling is done using `styled-components`.
 
 ## Database
-The service uses Firestore provide by Google Firebase for storing the necessary data  
+
+The service uses Firestore provide by Google Firebase for storing the necessary data
 
 `Collection` : `blog`  
 Document structure  
-Field | Type  | Description |
+Field | Type | Description |
 ------|-------|-------------|
 date | String | Date on which the blog was posted |
 desc | String | Short description of blog post |
-id   | Number | Unique id value |
+id | Number | Unique id value |
 image| String | Title image url |
 title| String | Title of the blog post |
-url  | String | Blogger url |
-
-`Collection` : `videos`  
-Document structure  
-Field | Type  | Description |
-------|-------|-------------|
-id   | Number | Unique id value |
-url  | String | Youtube url |
-
+url | String | Blogger url |
 
 `Collection` : `gallery`  
 Document structure  
-Field | Type  | Description |
+Field | Type | Description |
 ------|-------|-------------|
 date | String | Date on which the picture was taken |
-id   | Number | Unique id value |
+id | Number | Unique id value |
 place| String | Place at which the picture was taken |
-url  | String | Url of image hosted at a 3rd party website |
+url | String | Url of image hosted at a 3rd party website |
 
-`Collection` : `projects`  
-Document structure  
-Field | Type  | Description |
-------|-------|-------------|
-desc | String | Short description of the project |
-github_link | String | Github repository link |
-id   | Number | Unique id value |
-image | String | Url of the project image |
-site_link | String | Url of the project |
-tags | Array | Type of project |
-technology | Array | Technologies used |
-title  | String | Title of the project |
-
-At the time of development, firebase didn't have good way to obtain the total number of documents in a collection. So I had to create a new collection which holds the total for each of the collections.  
+At the time of development, firebase didn't have good way to obtain the total number of documents in a collection. So I had to create a new collection which holds the total for each of the collections.
 
 `Collection` : `total`  
 Document structure  
-Field | Type  | Description |
+Field | Type | Description |
 ------|-------|-------------|
 blog | Number | Total number of blog posts |
 gallery | Number | Total number of images |
-videos | Number | Total number of videos |
-projects | Number | Total number of projects |
 
 ## Environment Variables
-The service requires a number of config data to be present as environment variables.  
 
-Variable | Description |
-------|-------------|
-REACT_APP_PERSIST_KEY | Key in local storage where the data is persisted by `redux-persist` |
-REACT_APP_RECAPTCHA_SITE_KEY | Google ReCaptcha site key |
-REACT_APP_POST_FEEDBACK_ENDPOINT | Rest endpoint to post the contact form data |
-REACT_APP_FIREBASE_CONFIG | Firebase SDK config |
+The service requires a number of config data to be present as environment variables.
+
+| Variable                         | Description                                                         |
+| -------------------------------- | ------------------------------------------------------------------- |
+| REACT_APP_PERSIST_KEY            | Key in local storage where the data is persisted by `redux-persist` |
+| REACT_APP_RECAPTCHA_SITE_KEY     | Google ReCaptcha site key                                           |
+| REACT_APP_POST_FEEDBACK_ENDPOINT | Rest endpoint to post the contact form data                         |
+| REACT_APP_FIREBASE_CONFIG        | Firebase SDK config                                                 |
 
 ## Available Scripts
 
@@ -97,13 +78,15 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 ## Development flow
+
 1. Clone the repository to your local machine.
 2. Copy env.example as .env.
 3. Replace the keys inside the .env with the correct values.
 4. Run `npm install` and `npm start` to setup the local environment.
 
 ### Reference
-* [Google Firestore](https://firebase.google.com/docs/firestore)
-* [Firebase Admin Console](https://console.firebase.google.com/)
-* [React Bootstrap](https://react-bootstrap.github.io/)
-* [Google ReCaptcha](https://developers.google.com/recaptcha/intro)
+
+- [Google Firestore](https://firebase.google.com/docs/firestore)
+- [Firebase Admin Console](https://console.firebase.google.com/)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [Google ReCaptcha](https://developers.google.com/recaptcha/intro)

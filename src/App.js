@@ -7,8 +7,6 @@ import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import BlogPage from "./views/blog/blog";
 import GalleryPage from "./views/gallery/gallery";
-import AboutPage from "./views/about/about";
-import HomePage from "./views/home/home";
 import ContactIcon from "./components/contact-icon/contact-icon";
 import PageNotFound from "./components/page-not-found/page-not-found";
 
@@ -23,8 +21,7 @@ function App() {
       <ErrorBoundary>
         <Suspense fallback={Spinner}>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/" component={GalleryPage} />
             <Route exact path="/gallery" component={GalleryPage} />
             <Route exact path="/blog" component={BlogPage} />
             <Route component={PageNotFound} />
