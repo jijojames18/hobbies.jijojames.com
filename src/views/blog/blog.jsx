@@ -8,7 +8,7 @@ import { selectBlogIsLoading, selectBlogPosts, selectBlogTotal } from '../../red
 
 import BlogItem from '../../components/blog-item/blog-item';
 import Spinner from '../../components/spinner/spinner';
-import InfiniteScroll from '../../components/infinite-scroll/infinite-scroll';
+import LoadMoreButton from '../../components/load-more-button/load-more-button';
 
 import { ContainerComponent } from '../../styles/common.styles';
 
@@ -24,6 +24,14 @@ const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
     // eslint-disable-next-line
   }, []);
 
+  const loadMoreClicked = (event) => {
+    blogFetchStart({
+      from: posts.length,
+    });
+    event.preventDefault();
+    event.stopPropagation();
+  };
+
   return (
     <ContainerComponent className="blog-container">
       <Container>
@@ -34,7 +42,7 @@ const BlogPage = ({ isLoading, blogFetchStart, posts, total }) => {
       {isLoading ? (
         <Spinner></Spinner>
       ) : posts.length < total ? (
-        <InfiniteScroll triggerFetch={triggerFetch}></InfiniteScroll>
+        <LoadMoreButton loadMoreClicked={loadMoreClicked} />
       ) : (
         ''
       )}
