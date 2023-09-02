@@ -1,16 +1,22 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
-import axios from 'axios';
+import emailjs from '@emailjs/browser';
 
 import ContactFormTypes from './contact-form.types';
 import { contactFormSubmitSuccess, contactFormSubmitFailure } from './contact-form.actions';
 
 export function* sendContactFormRequest({ payload }) {
   try {
-    yield axios.post(process.env.REACT_APP_POST_FEEDBACK_ENDPOINT, JSON.stringify(payload), {
-      headers: {
-        'content-type': 'application/json',
+    yield emailjs.send(
+      process.env.REACT_APP_EMAIL_SERVICE_ID,
+      process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+      {
+        name: payload.formData.name,
+        email: payload.formData.email,
+        message: payload.formData.comments,
+        'g-recaptcha-response': payload.captcha,
       },
-    });
+      process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+    );
     yield put(contactFormSubmitSuccess());
   } catch (error) {
     yield put(contactFormSubmitFailure());

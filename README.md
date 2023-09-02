@@ -45,12 +45,14 @@ gallery | Number | Total number of images |
 
 The service requires a number of config data to be present as environment variables.
 
-| Variable                         | Description                                                         |
-| -------------------------------- | ------------------------------------------------------------------- |
-| REACT_APP_PERSIST_KEY            | Key in local storage where the data is persisted by `redux-persist` |
-| REACT_APP_RECAPTCHA_SITE_KEY     | Google ReCaptcha site key                                           |
-| REACT_APP_POST_FEEDBACK_ENDPOINT | Rest endpoint to post the contact form data                         |
-| REACT_APP_FIREBASE_CONFIG        | Firebase SDK config                                                 |
+| Variable                     | Description                                                         |
+| ---------------------------- | ------------------------------------------------------------------- |
+| REACT_APP_PERSIST_KEY        | Key in local storage where the data is persisted by `redux-persist` |
+| REACT_APP_RECAPTCHA_SITE_KEY | Google ReCaptcha site key                                           |
+| REACT_APP_FIREBASE_CONFIG    | Firebase SDK config                                                 |
+| REACT_APP_EMAIL_SERVICE_ID   | emailjs service id                                                  |
+| REACT_APP_EMAIL_TEMPLATE_ID  | emailjs template id                                                 |
+| REACT_APP_EMAIL_PUBLIC_KEY   | emailjs public key                                                  |
 
 ## Available Scripts
 
