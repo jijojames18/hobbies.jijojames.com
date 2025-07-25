@@ -5,11 +5,6 @@ const FooterItems = () => (
   <SocialNav>
     <Ul>
       <Li>
-        <Link href="https://twitter.com/jijojames18" rel="noopener noreferrer" target="_blank">
-          <TwitterImage alt="Twitter Page" />
-        </Link>
-      </Li>
-      <Li>
         <Link href="https://www.linkedin.com/in/jijojames18" rel="noopener noreferrer" target="_blank">
           <LinkedinImage alt="LinkedIn Page" />
         </Link>

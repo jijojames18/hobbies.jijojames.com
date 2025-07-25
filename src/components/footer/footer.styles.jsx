@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import twitterImage from '../../assets/icon-twitter.png';
 import githubImage from '../../assets/icon-github.png';
 import linkedinImage from '../../assets/icon-linkedin.png';
 
@@ -35,11 +34,6 @@ export const Li = styled.li`
 `;
 
 export const Link = styled.a``;
-
-export const TwitterImage = styled.div`
-  background-image: url(${twitterImage});
-  ${ImageSize}
-`;
 
 export const GithubImage = styled.div`
   background-image: url(${githubImage});
